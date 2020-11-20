@@ -1,5 +1,12 @@
-import React from "react";
-import { Link } from "react-scroll";
+import React from "react"; 
+import {
+	Link,
+	Element,
+	Events,
+	animateScroll as scroll,
+	scrollSpy,
+	scroller,
+} from "react-scroll";
 
 import Axios from "axios";
 import EmailInput from "../form/Email";
@@ -48,11 +55,11 @@ export default class About extends React.Component {
 	render = () => {
 		return (
 			<div id="ABOUT" name="ABOUT" className="page about">
-				{/* {localStorage.getItem("newsletter") ? null : (
+				{localStorage.getItem("newsletter") ? null : (
 					<EmailInputContainer
 						updateEmail={this.updateEmail}
 						onSubmit={this.onEmailSubmit}></EmailInputContainer>
-				)} */}
+				)}
 				<div className="pageHeader">
 					<div className="titleHeader">
 						<div className="titleText">ABOUT BEING FOUND</div>
@@ -95,7 +102,6 @@ export default class About extends React.Component {
 						<div className="cardAction">
 							<Link
 								to="ORDER"
-								containerId={"pageContainer"}
 								activeClass={"active"}
 								offset={-15}
 								spy={true}

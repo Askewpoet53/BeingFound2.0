@@ -28,11 +28,12 @@ const style = {
 };
 
 export default class Home extends React.Component {
+
 	state = {
 		active: false,
 		showMenu: false,
 	};
-
+	
 	componentDidMount() {
 		Events.scrollEvent.register("begin", function () {
 			console.log("begin", arguments);
@@ -43,36 +44,7 @@ export default class Home extends React.Component {
 		});
 		scrollSpy.update();
 	}
-	scrollTo() {
-		scroller.scrollTo("scroll-to-element", {
-			duration: 800,
-			delay: 0,
-			smooth: "easeInOutQuart",
-		});
-	}
-	scrollToWithContainer() {
-		let goToContainer = new Promise((resolve, reject) => {
-			Events.scrollEvent.register("end", () => {
-				resolve();
-				Events.scrollEvent.remove("end");
-			});
 
-			scroller.scrollTo("scroll-container", {
-				duration: 800,
-				delay: 0,
-				smooth: "easeInOutQuart",
-			});
-		});
-
-		goToContainer.then(() =>
-			scroller.scrollTo("scroll-container-second-element", {
-				duration: 800,
-				delay: 0,
-				smooth: "easeInOutQuart",
-				containerId: "scroll-container",
-			})
-		);
-	}
 	componentWillUnmount() {
 		Events.scrollEvent.remove("begin");
 		Events.scrollEvent.remove("end");
@@ -107,8 +79,8 @@ export default class Home extends React.Component {
 				onScroll={this.scrollListener}
 				style={style}
 				id="pageContainer"
-				className={pageClass}>
-				<div className={navBtnClass}>
+				className={"pageContainer"}>
+				<div name="NAVMENU" className={navBtnClass}>
 					<img src={menuIcon}></img>
 				</div>
 				<div id="HOME" name="HOME" className="page home">

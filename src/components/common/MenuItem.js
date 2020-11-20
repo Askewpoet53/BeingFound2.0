@@ -24,7 +24,6 @@ export default class MenuItem extends React.Component {
 
 		return (
 			<Link
-				containerId={"pageContainer"}
 				offset={-15}
 				spy={true}
 				smooth={true}

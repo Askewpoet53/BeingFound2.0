@@ -1,6 +1,12 @@
 import React from "react";
-import { Link } from "react-scroll";
-
+import {
+	Link,
+	Element,
+	Events,
+	animateScroll as scroll,
+	scrollSpy,
+	scroller,
+} from "react-scroll";
 //import images
 import authorImage from "../../resources/images/authorImage.jpg";
 
@@ -30,8 +36,6 @@ export default class OrderSignedCopy extends React.Component {
 						<div className="cardAction">
 							<Link
 								to="ORDER"
-								containerId={"pageContainer"}
-								activeClass={"active"}
 								offset={-15}
 								spy={true}
 								smooth={true}

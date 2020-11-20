@@ -31,7 +31,7 @@ export default class OrderSignedCopy extends React.Component {
 		const result = await stripe.redirectToCheckout({
 			sessionId: response.data,
 		});
-		console.log(result);
+		// console.log(result);
 		if (result.error) {
 			localStorage.setItem("purchase-error", JSON.stringify(result.error));
 		} else {
