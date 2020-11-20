@@ -1,0 +1,32 @@
+.page.about{
+	margin: 5% auto 0;
+	min-height: max-content;
+	.pageHeader {
+		margin: auto;
+	}
+	.pageBody {
+		display: flex;
+		flex-direction: row;
+		min-height: max-content;
+		.card {
+			margin: 5% auto;
+			max-width: 35vw;
+			height: max-content;
+			.cardBody {
+				height: 45%;
+				width: 85%;
+				line-height: 1.2rem;
+				font-size: 1.2rem;
+				margin: 5% auto 0;
+			}
+			.cardAction {
+				width: 20vw;
+				margin: 4% auto 5%;
+				.breakLine {
+					margin: 4% auto;
+					width: max-content;
+				}
+			}
+		}
+	}
+}

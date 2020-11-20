@@ -1,0 +1,28 @@
+.button {
+	height: 2.5vh;
+	width: 18vw;
+	background-color: $offWhite;
+	color: $darkPurple;
+	padding: 2% 5%;
+	cursor: pointer;
+	.buttonText {
+		max-width: max-content;
+		font-size: 1.2rem;
+		text-transform: uppercase;
+		margin: auto;
+		font-weight: 700;
+	}
+}
+
+.navMenuBtn {
+	display: block;
+	position: fixed;
+	right: 100px;
+	top: 20px;
+	opacity: 0;
+	transition: 0.5s ease;
+}
+
+.navMenuBtn.navBtnActive {
+	opacity: 1;
+}

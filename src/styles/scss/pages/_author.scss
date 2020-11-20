@@ -1,0 +1,30 @@
+.page.author{
+	margin: 5% auto 10%;
+	.pageHeader {
+		margin: auto;
+	}
+	.pageBody {
+		display: flex;
+		flex-direction: row-reverse;
+		.card {
+			margin: 5% auto;
+			max-width: 35vw;
+			height: max-content;
+			.cardBody {
+				height: 45%;
+				width: 85%;
+				line-height: 1.2rem;
+				font-size: 1.2rem;
+				margin: 5% auto 0;
+			}
+			.cardAction {
+				width: 20vw;
+				margin: 4% auto 5%;
+				.breakLine {
+					margin: 4% auto;
+					width: max-content;
+				}
+			}
+		}
+	}
+}

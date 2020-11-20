@@ -1,0 +1,26 @@
+.card {
+	background-color: $darkPurple;
+	padding: 2%;
+	width: max-content;
+	margin: 5% auto;
+	color: $offWhite;
+	.cardText {
+		font-size: 1.2rem;
+		line-height: 1.5rem;
+		text-align: center;
+		margin: 4% 0;
+	}
+	.subtitleText {
+		text-align: center;
+		font-size: 0.9rem;
+    }
+    .emphasisText{
+        font-weight: 700;
+        font-size:1.3rem;
+    }
+}
+
+.cardImg {
+	width: auto;
+	height: 500px;
+}

@@ -1,0 +1,366 @@
+@import url("https://use.typekit.net/xra4nry.css");
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none; }
+
+html {
+  font-family: "brandon-grotesque"; }
+
+.card {
+  background-color: #110f17;
+  padding: 2%;
+  width: max-content;
+  margin: 5% auto;
+  color: #efe5db; }
+  .card .cardText {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    text-align: center;
+    margin: 4% 0; }
+  .card .subtitleText {
+    text-align: center;
+    font-size: 0.9rem; }
+  .card .emphasisText {
+    font-weight: 700;
+    font-size: 1.3rem; }
+
+.cardImg {
+  width: auto;
+  height: 500px; }
+
+.menuItem {
+  background-color: #110f17;
+  color: #efe5db;
+  flex: 1;
+  height: 10vh;
+  width: 30vw;
+  margin: 0 2%;
+  /* For Mozilla Firefox */ }
+  .menuItem .itemText {
+    max-height: 4vh;
+    max-width: max-content;
+    margin: auto;
+    margin-top: 12%;
+    text-align: center; }
+  .menuItem ::selection {
+    color: none;
+    background: none; }
+  .menuItem ::-moz-selection {
+    color: none;
+    background: none; }
+
+.button {
+  height: 2.5vh;
+  width: 18vw;
+  background-color: #efe5db;
+  color: #110f17;
+  padding: 2% 5%;
+  cursor: pointer; }
+  .button .buttonText {
+    max-width: max-content;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: auto;
+    font-weight: 700; }
+
+.navMenuBtn {
+  display: block;
+  position: fixed;
+  right: 100px;
+  top: 20px;
+  opacity: 0;
+  transition: 0.5s ease; }
+
+.navMenuBtn.navBtnActive {
+  opacity: 1; }
+
+.titleHeader {
+  background-color: #110f17;
+  padding: 2%;
+  width: max-content;
+  margin: auto;
+  color: #efe5db; }
+  .titleHeader .titleText {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: .3rem; }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; }
+
+.emailSignup {
+  background-color: #110f17;
+  min-height: 10vh; }
+  .emailSignup .emailInput {
+    max-width: max-content;
+    margin: 5% auto; }
+    .emailSignup .emailInput input[type="email"] {
+      margin: 12.5% auto;
+      height: 3.25vh;
+      font-family: "brandon-grotesque";
+      font-size: 1.2rem;
+      background-color: #efe5db;
+      border: none;
+      width: 12vw; }
+    .emailSignup .emailInput button {
+      background-color: #efe5db;
+      border: none;
+      font-family: "brandon-grotesque";
+      text-transform: uppercase;
+      font-size: 1.2rem; }
+    .emailSignup .emailInput img.loader {
+      margin: auto;
+      height: 15vh;
+      width: 10vw;
+      background-color: unset; }
+
+.pageContainer {
+  min-height: 100vh;
+  width: 99.5vw;
+  margin: auto;
+  overflow: auto; }
+
+.page {
+  margin: auto;
+  min-height: 90vh;
+  width: 99vw; }
+
+.homeMenu {
+  display: flex;
+  flex-direction: row;
+  max-width: 95%;
+  margin: auto; }
+  .homeMenu a {
+    background-color: #110f17;
+    color: #efe5db;
+    flex: 1;
+    height: 10vh;
+    width: 30vw;
+    margin: 0 2%;
+    cursor: pointer;
+    /* For Mozilla Firefox */ }
+    .homeMenu a .menuItem {
+      width: 100%;
+      background-color: unset; }
+    .homeMenu a ::selection {
+      color: none;
+      background: none; }
+    .homeMenu a ::-moz-selection {
+      color: none;
+      background: none; }
+
+.page.order {
+  margin-top: 5%; }
+  .page.order .pageHeader {
+    margin: auto; }
+  .page.order .pageBody {
+    display: flex;
+    flex-direction: row; }
+    .page.order .pageBody .card {
+      margin: 5% auto;
+      max-width: 35vw;
+      height: max-content; }
+      .page.order .pageBody .card .cardBody {
+        height: 45%;
+        width: 85%;
+        line-height: 1.2rem;
+        font-size: 1.2rem;
+        margin: 5% auto 0; }
+      .page.order .pageBody .card .cardAction {
+        width: 20vw;
+        margin: 4% auto 5%; }
+        .page.order .pageBody .card .cardAction .breakLine {
+          margin: 4% auto;
+          width: max-content; }
+
+.page.about {
+  margin: 5% auto 0;
+  min-height: max-content; }
+  .page.about .pageHeader {
+    margin: auto; }
+  .page.about .pageBody {
+    display: flex;
+    flex-direction: row;
+    min-height: max-content; }
+    .page.about .pageBody .card {
+      margin: 5% auto;
+      max-width: 35vw;
+      height: max-content; }
+      .page.about .pageBody .card .cardBody {
+        height: 45%;
+        width: 85%;
+        line-height: 1.2rem;
+        font-size: 1.2rem;
+        margin: 5% auto 0; }
+      .page.about .pageBody .card .cardAction {
+        width: 20vw;
+        margin: 4% auto 5%; }
+        .page.about .pageBody .card .cardAction .breakLine {
+          margin: 4% auto;
+          width: max-content; }
+
+.page.author {
+  margin: 5% auto 10%; }
+  .page.author .pageHeader {
+    margin: auto; }
+  .page.author .pageBody {
+    display: flex;
+    flex-direction: row-reverse; }
+    .page.author .pageBody .card {
+      margin: 5% auto;
+      max-width: 35vw;
+      height: max-content; }
+      .page.author .pageBody .card .cardBody {
+        height: 45%;
+        width: 85%;
+        line-height: 1.2rem;
+        font-size: 1.2rem;
+        margin: 5% auto 0; }
+      .page.author .pageBody .card .cardAction {
+        width: 20vw;
+        margin: 4% auto 5%; }
+        .page.author .pageBody .card .cardAction .breakLine {
+          margin: 4% auto;
+          width: max-content; }

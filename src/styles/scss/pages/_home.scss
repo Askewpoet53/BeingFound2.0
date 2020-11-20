@@ -1,0 +1,30 @@
+.homeMenu {
+	display: flex;
+	flex-direction: row;
+	max-width: 95%;
+	margin: auto;
+	a {
+		background-color: $darkPurple;
+		color: $offWhite;
+		flex: 1;
+		height: 10vh;
+		width: 30vw;
+		margin: 0 2%;
+		cursor: pointer;
+		.menuItem {
+			width: 100%;
+			background-color: unset;
+		
+		}
+		::selection {
+			color: none;
+			background: none;
+		}
+		/* For Mozilla Firefox */
+		::-moz-selection {
+			color: none;
+			background: none;
+		}
+	}
+}
+

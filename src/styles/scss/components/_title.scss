@@ -1,0 +1,12 @@
+.titleHeader{
+    background-color: $darkPurple;
+    padding:2%;
+    width: max-content;
+    margin:  auto;
+    color:$offWhite;
+    .titleText{
+        font-size: 3rem;
+        font-weight:700;
+        letter-spacing: .3rem;;
+    }
+}
