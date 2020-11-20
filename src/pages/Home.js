@@ -1,13 +1,6 @@
 //import packages
 import React from "react";
-import {
-	Link,
-	Element,
-	Events,
-	animateScroll as scroll,
-	scrollSpy,
-	scroller,
-} from "react-scroll";
+import { Events, scrollSpy } from "react-scroll";
 
 //import components
 import MenuItem from "../components/common/MenuItem";
@@ -28,12 +21,11 @@ const style = {
 };
 
 export default class Home extends React.Component {
-
 	state = {
 		active: false,
 		showMenu: false,
 	};
-	
+
 	componentDidMount() {
 		Events.scrollEvent.register("begin", function () {
 			console.log("begin", arguments);
@@ -51,8 +43,9 @@ export default class Home extends React.Component {
 	}
 
 	scrollListener = (evt) => {
-		console.log(evt);
-		let scrollAmount = evt.target.scrollTop;
+		console.log(evt.target.scrollingElement.scrollTop);
+		let scrollAmount = evt.target.scrollingElement.scrollTop;
+		
 		if (scrollAmount >= 900) {
 			this.setState({ showMenu: true });
 		} else {
@@ -60,11 +53,17 @@ export default class Home extends React.Component {
 		}
 		console.log(scrollAmount);
 	};
-
 	toggleNavMenu = () => {
 		this.setState({ active: !this.state.active });
 	};
 
+	componentDidMount() {
+		window.addEventListener("scroll", this.scrollListener);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener("scroll", this.scrollListener);
+	}
 	render = () => {
 		let pageClass = this.state.active
 			? "pageContainer shovedOver"
