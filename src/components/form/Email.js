@@ -1,6 +1,6 @@
 import React from "react";
 
-import Spinner from "../../resources/images/Spinner-1s-200px.svg"
+import Spinner from "../../resources/images/Spinner-1s-200px.svg";
 
 /**
  * @property {Function} onSubmit - function that runs on submittion
@@ -23,10 +23,9 @@ export default class EmailInput extends React.Component {
 		return (
 			<div className={this.props.className}>
 				{this.state.loading ? (
-                    <img className="loader" src={Spinner}></img>
+					<img className="loader" src={Spinner}></img>
 				) : (
-					<div>
-
+					<div className="emailInput">
 						<input
 							onChange={this.handleUpdate}
 							type="email"

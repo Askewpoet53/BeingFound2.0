@@ -1,12 +1,38 @@
 .pageContainer {
 	min-height: 100vh;
-    width: 99.5vw;
-    margin:auto;
+	width: 100vw;
+	margin: auto;
 	overflow: auto;
+	overflow-x: hidden;
 }
 
 .page {
 	// margin: auto;
 	min-height: 90vh;
-	width: 99vw;
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+.pageContainer {
+	.navMenuContainer {
+		top: 50px;
+		height: 75vh;
+		position: fixed;
+		transition: 0.5s ease;
+		background-color: $darkPurple;
+		.menuItem {
+			margin: unset;
+			height: 5vh;
+		}
+	}
+
+	.navMenuContainer.hiddenNav {
+		top: 50px;
+		right: -1000px;
+	}
+
+	.navMenuContainer.activeNav {
+		top: 50px;
+		right: 100px;
+	}
 }

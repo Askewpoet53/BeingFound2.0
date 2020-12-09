@@ -28,7 +28,7 @@ export default class About extends React.Component {
 
 	onEmailSubmit = async (evt) => {
 		let result = regex.emailCheck.test(this.state.email);
-		// console.log(result);
+	
 		if (result) {
 			//send to back end
 			const response = await Axios.post(
@@ -57,6 +57,7 @@ export default class About extends React.Component {
 			<div id="ABOUT" name="ABOUT" className="page about">
 				{localStorage.getItem("newsletter") ? null : (
 					<EmailInputContainer
+						className="emailSignupContainer"
 						updateEmail={this.updateEmail}
 						onSubmit={this.onEmailSubmit}></EmailInputContainer>
 				)}

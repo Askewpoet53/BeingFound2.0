@@ -133,13 +133,15 @@ select:focus {
   outline: none; }
 
 html {
-  font-family: "brandon-grotesque"; }
+  font-family: "brandon-grotesque";
+  overflow-x: hidden; }
 
 .card {
   background-color: #110f17;
   padding: 2%;
   width: max-content;
   margin: 5% auto;
+  border-radius: .5rem;
   color: #efe5db; }
   .card .cardText {
     font-size: 1.2rem;
@@ -152,6 +154,13 @@ html {
   .card .emphasisText {
     font-weight: 700;
     font-size: 1.3rem; }
+  .card .cardAction {
+    max-width: fit-content;
+    margin: 5% auto; }
+
+.lightCard {
+  background: #efe5db;
+  color: #110f17; }
 
 .cardImg {
   width: auto;
@@ -198,6 +207,7 @@ html {
   right: 100px;
   top: 20px;
   opacity: 0;
+  z-index: 999;
   transition: 0.5s ease; }
 
 .navMenuBtn.navBtnActive {
@@ -245,6 +255,7 @@ html {
       border: none;
       width: 12vw; }
     .emailSignup .emailInput button {
+      height: 3.55vh;
       background-color: #efe5db;
       border: none;
       font-family: "brandon-grotesque";
@@ -256,21 +267,316 @@ html {
       width: 10vw;
       background-color: unset; }
 
+.cardText .emailSignupContainer .emailInput {
+  max-width: max-content;
+  margin: 5% auto; }
+  .cardText .emailSignupContainer .emailInput input[type="email"] {
+    margin: 12.5% auto;
+    height: 3.25vh;
+    font-family: "brandon-grotesque";
+    font-size: 1.2rem;
+    background-color: #efe5db;
+    border: none;
+    width: 12vw; }
+  .cardText .emailSignupContainer .emailInput button {
+    height: 3.55vh;
+    background-color: #efe5db;
+    border: none;
+    font-family: "brandon-grotesque";
+    text-transform: uppercase;
+    font-size: 1.2rem; }
+  .cardText .emailSignupContainer .emailInput img.loader {
+    margin: auto;
+    height: 15vh;
+    width: 10vw;
+    background-color: unset; }
+
 .pageContainer {
   min-height: 100vh;
-  width: 99.5vw;
+  width: 100vw;
   margin: auto;
-  overflow: auto; }
+  overflow: auto;
+  overflow-x: hidden; }
 
 .page {
   min-height: 90vh;
-  width: 99vw; }
+  width: 100vw;
+  overflow-x: hidden; }
 
+.pageContainer .navMenuContainer {
+  top: 50px;
+  height: 75vh;
+  position: fixed;
+  transition: 0.5s ease;
+  background-color: #110f17; }
+  .pageContainer .navMenuContainer .menuItem {
+    margin: unset;
+    height: 5vh; }
+
+.pageContainer .navMenuContainer.hiddenNav {
+  top: 50px;
+  right: -1000px; }
+
+.pageContainer .navMenuContainer.activeNav {
+  top: 50px;
+  right: 100px; }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .pageContainer .navMenuContainer {
+    top: 50px;
+    height: 75vh;
+    position: fixed;
+    transition: 0.5s ease;
+    background-color: #110f17; }
+    .pageContainer .navMenuContainer .menuItem {
+      margin: unset;
+      height: 5vh; }
+  .pageContainer .navMenuContainer.hiddenNav {
+    top: 50px;
+    right: -1000px; }
+  .pageContainer .navMenuContainer.activeNav {
+    top: 50px;
+    right: 100px; } }
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .navbarContainer .navbarMenuBtnContainer {
+    margin-top: 5%;
+    margin-left: 89%; }
+  .navbarMenuContainer.active {
+    right: 0;
+    top: 15vh;
+    height: 85vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); }
+  .aboutPageContainer .bookImageContainer img {
+    width: auto;
+    height: 40vh; }
+  .navbarMenuContainer.hidden {
+    right: -1300px !important;
+    top: 15vh;
+    height: 85vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); }
+  .cardHeader {
+    margin-top: 10%; }
+    .cardHeader .cardHeaderText {
+      max-width: max-content;
+      max-height: max-content;
+      font-size: 2.5rem; }
+  .cardBody {
+    margin: 5%;
+    max-height: fit-content;
+    max-width: 85%; }
+  .cardBodyText {
+    font-size: 1.6rem; }
+  .horizNavMenu {
+    max-height: 70vh !important;
+    flex-direction: column !important; }
+    .horizNavMenu .navMenuItemContainer {
+      width: 40vw;
+      max-height: 10vh !important;
+      margin: auto auto !important; }
+      .horizNavMenu .navMenuItemContainer .linkText {
+        font-size: 0.9rem; }
+  .preorderPage .cardHeader .cardHeaderText {
+    font-size: 2rem; }
+  .preorderPage .subtitleCard {
+    max-height: 13vh;
+    padding: 0 2%; }
+    .preorderPage .subtitleCard .subtitleText {
+      font-size: 1.2rem;
+      line-height: 1.1rem;
+      letter-spacing: 0.1rem; }
+  .preorderPage .cardBody.flexRow {
+    max-height: 60vh; }
+    .preorderPage .cardBody.flexRow .checkoutSectionContainer {
+      height: max-content;
+      width: 50%; }
+      .preorderPage .cardBody.flexRow .checkoutSectionContainer .bookSideInfoContainer {
+        height: max-content; }
+        .preorderPage .cardBody.flexRow .checkoutSectionContainer .bookSideInfoContainer .bookSideInfoText {
+          font-size: 1rem;
+          line-height: 1.1rem;
+          letter-spacing: 0.1rem; }
+        .preorderPage .cardBody.flexRow .checkoutSectionContainer .bookSideInfoContainer .buyNowBtn {
+          width: 20vw; }
+    .preorderPage .cardBody.flexRow .bookImageContainer {
+      width: auto;
+      height: 45vh;
+      margin: auto; }
+  .modalCurtain {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.5s ease;
+    flex-direction: column; }
+    .modalCurtain .modalContainer {
+      flex-direction: column;
+      margin: auto;
+      max-width: 80vw;
+      min-height: 45vh; }
+      .modalCurtain .modalContainer div {
+        margin: auto;
+        min-width: 60%;
+        max-height: 5vh; }
+        .modalCurtain .modalContainer div input[type="email"] {
+          min-width: 75%;
+          font-family: "brandon-grotesque";
+          font-size: 1.7rem;
+          border: none;
+          background-color: #1c1926;
+          color: #e7d8c9; }
+        .modalCurtain .modalContainer div button {
+          font-family: "brandon-grotesque";
+          text-transform: uppercase;
+          font-weight: 700;
+          background-color: #efe5db;
+          border: none;
+          font-size: 1.7rem; }
+    .modalCurtain .modalCloseImgContainer {
+      max-height: 15vw; }
+      .modalCurtain .modalCloseImgContainer .modalCloseImg {
+        margin-left: auto;
+        margin-right: 5vw;
+        margin-top: 1%;
+        width: 5vw; }
+  .modalCurtain.active {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0; }
+  .modalCurtain.inactive {
+    position: absolute;
+    top: -100vh; } }
+
+/* iPads (landscape) ----------- */
+/* iPads (portrait) ----------- */
+/* Desktops and laptops ----------- */
+/* Large screens ----------- */
+/* iPhone 5 (portrait &amp; landscape)----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .navbarContainer .navbarMenuBtnContainer {
+    margin-top: 5%;
+    margin-left: 80%; }
+  .navbarMenuContainer.active {
+    right: 0;
+    top: 15vh;
+    height: 85vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); }
+  .navbarMenuContainer.hidden {
+    right: -500px;
+    top: 15vh;
+    height: 85vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); }
+  .cardHeader {
+    margin-top: 5%;
+    max-height: 10vh; }
+    .cardHeader .cardHeaderText {
+      font-size: 1.3rem; }
+  .subtitleCard .subtitleText {
+    font-size: .9rem; }
+  .cardBody {
+    margin-top: 5%;
+    max-height: fit-content;
+    max-width: 85%; }
+    .cardBody .cardBodyText {
+      font-size: 1rem; }
+  .horizNavMenu {
+    flex-direction: column;
+    max-height: 70vh !important; }
+    .horizNavMenu .navMenuItemContainer {
+      margin-top: 10%; }
+  .preorderPage .cardHeader .cardHeaderText {
+    font-size: 1.4rem; }
+  .preorderPage .subtitleCard {
+    max-height: 20vh;
+    padding: 0 1%; }
+    .preorderPage .subtitleCard .subtitleText {
+      font-size: 0.9rem; }
+  .preorderPage .cardBody.flexRow {
+    max-height: 60vh;
+    flex-direction: column !important; }
+    .preorderPage .cardBody.flexRow .checkoutSectionContainer {
+      height: max-content; }
+      .preorderPage .cardBody.flexRow .checkoutSectionContainer .bookSideInfoContainer {
+        height: max-content; }
+        .preorderPage .cardBody.flexRow .checkoutSectionContainer .bookSideInfoContainer .bookSideInfoText {
+          font-size: 1rem; }
+        .preorderPage .cardBody.flexRow .checkoutSectionContainer .bookSideInfoContainer .buyNowBtn {
+          width: 50vw; }
+    .preorderPage .cardBody.flexRow .bookImageContainer {
+      width: auto;
+      height: 30vh;
+      margin: auto; }
+  .aboutPageContainer {
+    flex-direction: column !important;
+    overflow-y: auto;
+    max-height: 75vh;
+    padding-bottom: 2%; }
+    .aboutPageContainer .bookImageContainer {
+      max-height: fit-content;
+      margin: auto; }
+      .aboutPageContainer .bookImageContainer img {
+        width: auto;
+        max-height: 30vh; }
+    .aboutPageContainer .cardContentContainer {
+      flex-direction: column; }
+      .aboutPageContainer .cardContentContainer .emphasisText {
+        font-size: 1.7rem !important;
+        text-align: center; }
+  .modalCurtain {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.5s ease;
+    flex-direction: column; }
+    .modalCurtain .modalContainer {
+      flex-direction: column;
+      margin: auto;
+      max-width: 100vw;
+      min-height: 65vh; }
+      .modalCurtain .modalContainer div {
+        margin: auto;
+        min-width: 60%;
+        max-height: 5vh; }
+        .modalCurtain .modalContainer div input[type="email"] {
+          min-width: 75%;
+          font-family: "brandon-grotesque";
+          font-size: 1.2rem;
+          border: none;
+          background-color: #1c1926;
+          color: #e7d8c9; }
+        .modalCurtain .modalContainer div button {
+          font-family: "brandon-grotesque";
+          text-transform: uppercase;
+          font-weight: 700;
+          background-color: #efe5db;
+          border: none;
+          font-size: 1.2rem; }
+    .modalCurtain .modalCloseImgContainer {
+      max-height: 15vw; }
+      .modalCurtain .modalCloseImgContainer .modalCloseImg {
+        margin-left: auto;
+        margin-right: 5vw;
+        margin-top: 1%;
+        width: 5vw; }
+  .modalCurtain.active {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0; }
+  .modalCurtain.inactive {
+    position: absolute;
+    top: -100vh; } }
+
+/* Glaxay Fold (landscape)----------- */
 .homeMenu {
   display: flex;
   flex-direction: row;
   max-width: 95%;
-  margin: auto; }
+  margin: auto;
+  overflow: hidden; }
   .homeMenu a {
     background-color: #110f17;
     color: #efe5db;
@@ -363,3 +669,67 @@ html {
         .page.author .pageBody .card .cardAction .breakLine {
           margin: 4% auto;
           width: max-content; }
+
+.success .pageHeader {
+  margin-top: 2%; }
+
+.holidayNomineeForm {
+  display: flex;
+  flex-direction: column; }
+  .holidayNomineeForm .formRow {
+    min-height: 5vh; }
+    .holidayNomineeForm .formRow label {
+      margin: auto;
+      height: max-content; }
+    .holidayNomineeForm .formRow input {
+      margin: 1%;
+      font-family: "brandon-grotesque";
+      border: none;
+      margin-left: auto;
+      margin-right: 0;
+      width: 100%; }
+    .holidayNomineeForm .formRow input[type="file"] {
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1; }
+    .holidayNomineeForm .formRow .inputfile + label {
+      font-size: 1.25em;
+      font-weight: 700;
+      color: #efe5db;
+      background-color: #110f17;
+      padding: 1% 2%;
+      margin: 5% 10%;
+      width: 100%;
+      transition: 0.5s ease;
+      outline: 1px dotted #000;
+      outline: -webkit-focus-ring-color auto 5px; }
+    .holidayNomineeForm .formRow .inputfile:focus + label,
+    .holidayNomineeForm .formRow .inputfile + label:hover {
+      background-color: #282336; }
+    .holidayNomineeForm .formRow textarea {
+      border: none;
+      margin: 1%;
+      font-family: "brandon-grotesque";
+      border: none;
+      margin-left: auto;
+      margin-right: 0;
+      width: 100%; }
+  .holidayNomineeForm .sectionSplit {
+    margin: 5% auto; }
+
+.submitBtn {
+  max-width: max-content;
+  margin: 0 auto; }
+  .submitBtn button {
+    font-family: "brandon-grotesque";
+    border: none;
+    background-color: #110f17;
+    color: #efe5db;
+    height: 4vh;
+    transition: 0.5s ease;
+    width: 10vw; }
+  .submitBtn button:hover {
+    background-color: #282336; }

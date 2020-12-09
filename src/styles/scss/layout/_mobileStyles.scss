@@ -1,0 +1,523 @@
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+	
+	.pageContainer {
+		.navMenuContainer {
+			top: 50px;
+			height: 75vh;
+			position: fixed;
+			transition: 0.5s ease;
+			background-color: $darkPurple;
+			.menuItem {
+				margin: unset;
+				height: 5vh;
+			}
+		}
+	
+		.navMenuContainer.hiddenNav {
+			top: 50px;
+			right: -1000px;
+		}
+	
+		.navMenuContainer.activeNav {
+			top: 50px;
+			right: 100px;
+		}
+	}
+	
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	.navbarContainer {
+		.navbarMenuBtnContainer {
+			margin-top: 5%;
+			margin-left: 89%;
+		}
+	}
+
+	.navbarMenuContainer.active {
+		right: 0;
+		top: 15vh;
+		height: 85vh;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	.aboutPageContainer {
+		.bookImageContainer {
+			img {
+				width: auto;
+				height: 40vh;
+			}
+		}
+	}
+	.navbarMenuContainer.hidden {
+		right: -1300px !important;
+		top: 15vh;
+		height: 85vh;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	.cardHeader {
+		margin-top: 10%;
+		.cardHeaderText {
+			max-width: max-content;
+			max-height: max-content;
+			font-size: 2.5rem;
+		}
+	}
+	.cardBody {
+		margin: 5%;
+		max-height: fit-content;
+		max-width: 85%;
+	}
+	.cardBodyText {
+		font-size: 1.6rem;
+	}
+	.horizNavMenu {
+		max-height: 70vh !important;
+		flex-direction: column !important;
+
+		.navMenuItemContainer {
+			width: 40vw;
+			max-height: 10vh !important;
+			margin: auto auto !important;
+			.linkText {
+				font-size: 0.9rem;
+			}
+		}
+	}
+	.preorderPage {
+		.cardHeader {
+			.cardHeaderText {
+				font-size: 2rem;
+			}
+		}
+		.subtitleCard {
+			max-height: 13vh;
+			padding: 0 2%;
+			.subtitleText {
+				font-size: 1.2rem;
+				line-height: 1.1rem;
+				letter-spacing: 0.1rem;
+			}
+		}
+		.cardBody.flexRow {
+			max-height: 60vh;
+			.checkoutSectionContainer {
+				height: max-content;
+				width: 50%;
+				.bookSideInfoContainer {
+					height: max-content;
+					.bookSideInfoText {
+						font-size: 1rem;
+						line-height: 1.1rem;
+						letter-spacing: 0.1rem;
+					}
+					.buyNowBtn {
+						width: 20vw;
+					}
+				}
+			}
+			.bookImageContainer {
+				width: auto;
+				height: 45vh;
+				margin: auto;
+			}
+		}
+	}
+	.modalCurtain {
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+		transition: 0.5s ease;
+		flex-direction: column;
+		.modalContainer {
+			flex-direction: column;
+			margin: auto;
+			max-width: 80vw;
+			min-height: 45vh;
+			div {
+				margin: auto;
+				min-width: 60%;
+				max-height: 5vh;
+				input[type="email"] {
+					min-width: 75%;
+					font-family: "brandon-grotesque";
+					font-size: 1.7rem;
+					border: none;
+					background-color: lighten($darkPurple, 5%);
+					color: darken($offWhite, 5%);
+				}
+
+				button {
+					font-family: "brandon-grotesque";
+					text-transform: uppercase;
+					font-weight: 700;
+					background-color: $offWhite;
+					border: none;
+					font-size: 1.7rem;
+				}
+			}
+		}
+		.modalCloseImgContainer {
+			max-height: 15vw;
+
+			.modalCloseImg {
+				margin-left: auto;
+				margin-right: 5vw;
+				margin-top: 1%;
+				width: 5vw;
+			}
+		}
+	}
+
+	.modalCurtain.active {
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.5);
+		top: 0;
+	}
+	.modalCurtain.inactive {
+		position: absolute;
+		top: -100vh;
+	}
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+}
+
+/* iPhone 5 (portrait &amp; landscape)----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+	.navbarContainer {
+		.navbarMenuBtnContainer {
+			margin-top: 5%;
+			margin-left: 80%;
+		}
+	}
+
+	.navbarMenuContainer.active {
+		right: 0;
+		top: 15vh;
+		height: 85vh;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+
+	.navbarMenuContainer.hidden {
+		right: -500px;
+		top: 15vh;
+		height: 85vh;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	.cardHeader {
+		margin-top: 5%;
+		max-height:10vh;
+		.cardHeaderText{
+			font-size:1.3rem
+		}
+	}
+	.subtitleCard{
+		.subtitleText{
+			font-size: .9rem;
+		}
+	}
+	.cardBody {
+		margin-top: 5%;
+		max-height: fit-content;
+		max-width: 85%;
+		.cardBodyText {
+			font-size: 1rem;
+		}
+	}
+	.horizNavMenu {
+		flex-direction: column;
+		max-height: 70vh !important;
+		.navMenuItemContainer {
+			margin-top: 10%;
+		}
+	}
+	.preorderPage {
+		.cardHeader {
+			.cardHeaderText {
+				font-size: 1.4rem;
+			}
+		}
+		.subtitleCard {
+			max-height: 20vh;
+			padding: 0 1%;
+			.subtitleText {
+				font-size: 0.9rem;
+			}
+		}
+		.cardBody.flexRow {
+			max-height: 60vh;
+			flex-direction: column !important;
+			.checkoutSectionContainer {
+				height: max-content;
+				.bookSideInfoContainer {
+					height: max-content;
+					.bookSideInfoText {
+						font-size: 1rem;
+					}
+					.buyNowBtn {
+						width: 50vw;
+					}
+				}
+			}
+			.bookImageContainer {
+				width: auto;
+				height: 30vh;
+				margin: auto;
+			}
+		}
+	}
+	.aboutPageContainer {
+		flex-direction: column !important;
+		overflow-y: auto;
+		max-height: 75vh;
+		padding-bottom: 2%;
+		.bookImageContainer {
+			max-height: fit-content;
+			margin: auto;
+			img {
+				width: auto;
+				max-height: 30vh;
+			}
+		}
+		.cardContentContainer {
+			flex-direction: column;
+			.emphasisText {
+				font-size: 1.7rem !important;
+				text-align: center;
+			}
+		}
+	}
+
+	.modalCurtain {
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+		transition: 0.5s ease;
+		flex-direction: column;
+		.modalContainer {
+			flex-direction: column;
+			margin: auto;
+			max-width: 100vw;
+			min-height: 65vh;
+			div {
+				margin: auto;
+				min-width: 60%;
+				max-height: 5vh;
+				input[type="email"] {
+					min-width: 75%;
+					font-family: "brandon-grotesque";
+					font-size: 1.2rem;
+					border: none;
+					background-color: lighten($darkPurple, 5%);
+					color: darken($offWhite, 5%);
+				}
+
+				button {
+					font-family: "brandon-grotesque";
+					text-transform: uppercase;
+					font-weight: 700;
+					background-color: $offWhite;
+					border: none;
+					font-size: 1.2rem;
+				}
+			}
+		}
+		.modalCloseImgContainer {
+			max-height: 15vw;
+
+			.modalCloseImg {
+				margin-left: auto;
+				margin-right: 5vw;
+				margin-top: 1%;
+				width: 5vw;
+			}
+		}
+	}
+
+	.modalCurtain.active {
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.5);
+		top: 0;
+	}
+	.modalCurtain.inactive {
+		position: absolute;
+		top: -100vh;
+	}
+}
+
+/* Glaxay Fold (landscape)----------- */
+// @media only screen and (min-device-width: 280px) and (max-device-width: 653px) {
+// 	.navbarContainer {
+// 		.navbarMenuBtnContainer {
+// 			margin-top: 5%;
+// 			margin-left: 80%;
+// 		}
+// 	}
+
+// 	.navbarMenuContainer.active {
+// 		right: 0;
+// 		top: 15vh;
+// 		height: 85vh;
+// 		width: 100%;
+// 		background-color: rgba(0, 0, 0, 0.5);
+// 	}
+
+// 	.navbarMenuContainer.hidden {
+// 		right: -500px;
+// 		top: 15vh;
+// 		height: 85vh;
+// 		width: 100%;
+// 		background-color: rgba(0, 0, 0, 0.5);
+// 	}
+// 	.cardHeader {
+// 		margin-top: 5%;
+// 		max-height:10vh;
+// 		.cardHeaderText{
+// 			font-size:1.5rem
+// 		}
+// 	}
+// 	.cardBody {
+// 		margin-top: 5%;
+// 		max-height: fit-content;
+// 		max-width: 85%;
+// 		.cardBodyText {
+// 			font-size: 1rem;
+// 		}
+// 	}
+// 	.horizNavMenu {
+// 		flex-direction: column;
+// 		max-height: 70vh !important;
+// 		.navMenuItemContainer {
+// 			margin-top: 10%;
+// 		}
+// 	}
+// 	.preorderPage {
+// 		.cardHeader {
+// 			.cardHeaderText {
+// 				font-size: 1.6rem;
+// 			}
+// 		}
+// 		.subtitleCard {
+// 			max-height: 10vh;
+// 			padding: 0 2%;
+// 			.subtitleText {
+// 				font-size: 0.9rem;
+// 			}
+// 		}
+// 		.cardBody.flexRow {
+// 			max-height: 60vh;
+// 			flex-direction: column !important;
+// 			.checkoutSectionContainer {
+// 				height: max-content;
+// 				.bookSideInfoContainer {
+// 					height: max-content;
+// 					.bookSideInfoText {
+// 						font-size: 1rem;
+// 					}
+// 					.buyNowBtn {
+// 						width: 50vw;
+// 					}
+// 				}
+// 			}
+// 			.bookImageContainer {
+// 				width: auto;
+// 				height: 30vh;
+// 				margin: auto;
+// 			}
+// 		}
+// 	}
+// 	.aboutPageContainer {
+// 		flex-direction: column !important;
+// 		overflow-y: auto;
+// 		max-height: 75vh;
+// 		padding-bottom: 2%;
+// 		.bookImageContainer {
+// 			max-height: fit-content;
+// 			margin: auto;
+// 			img {
+// 				width: auto;
+// 				max-height: 30vh;
+// 			}
+// 		}
+// 		.cardContentContainer {
+// 			flex-direction: column;
+// 			.emphasisText {
+// 				font-size: 1.7rem !important;
+// 				text-align: center;
+// 			}
+// 		}
+// 	}
+
+// 	.modalCurtain {
+// 		position: absolute;
+// 		width: 100vw;
+// 		height: 100vh;
+// 		transition: 0.5s ease;
+// 		flex-direction: column;
+// 		.modalContainer {
+// 			flex-direction: column;
+// 			margin: auto;
+// 			max-width: 100vw;
+// 			min-height: 65vh;
+// 			div {
+// 				margin:auto;
+// 				input[type="email"] {
+					
+// 					font-family: "brandon-grotesque";
+// 					font-size: 1rem;
+// 					border: none;
+// 					background-color: lighten($darkPurple, 5%);
+// 					color: darken($offWhite, 5%);
+// 				}
+
+// 				button {
+// 					font-family: "brandon-grotesque";
+// 					text-transform: uppercase;
+// 					font-weight: 700;
+// 					background-color: $offWhite;
+// 					border: none;
+// 					font-size: 1rem;
+// 				}
+// 			}
+// 		}
+// 		.modalCloseImgContainer {
+// 			max-height: 15vw;
+
+// 			.modalCloseImg {
+// 				margin-left: auto;
+// 				margin-right: 5vw;
+// 				margin-top: 1%;
+// 				width: 5vw;
+// 			}
+// 		}
+// 	}
+
+// 	.modalCurtain.active {
+// 		position: absolute;
+// 		background-color: rgba(0, 0, 0, 0.5);
+// 		top: 0;
+// 	}
+// 	.modalCurtain.inactive {
+// 		position: absolute;
+// 		top: -100vh;
+// 	}
+// }

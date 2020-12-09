@@ -1,0 +1,76 @@
+.holidayNomineeForm {
+	display: flex;
+	flex-direction: column;
+	.formRow {
+		min-height: 5vh;
+		label {
+			margin: auto;
+			height: max-content;
+		}
+		input {
+			margin: 1%;
+			font-family: "brandon-grotesque";
+			// background: $darkPurple;
+			border: none;
+			margin-left: auto;
+			margin-right: 0;
+			width: 100%;
+		}
+		input[type="file"] {
+			width: 0.1px;
+			height: 0.1px;
+			opacity: 0;
+			overflow: hidden;
+			position: absolute;
+			z-index: -1;
+		}
+
+		.inputfile + label {
+			font-size: 1.25em;
+			font-weight: 700;
+			color: $offWhite;
+			background-color: $darkPurple;
+			padding: 1% 2%;
+			margin: 5% 10%;
+			width: 100%;
+			transition: 0.5s ease;
+			outline: 1px dotted #000;
+			outline: -webkit-focus-ring-color auto 5px;
+		}
+
+		.inputfile:focus + label,
+		.inputfile + label:hover {
+			background-color: lighten($darkPurple, 10%);
+		}
+		textarea {
+			border: none;
+			margin: 1%;
+			font-family: "brandon-grotesque";
+			// background: $darkPurple;
+			border: none;
+			margin-left: auto;
+			margin-right: 0;
+			width: 100%;
+		}
+	}
+	.sectionSplit {
+		margin: 5% auto;
+	}
+}
+
+.submitBtn {
+	max-width: max-content;
+	margin: 0 auto;
+	button {
+		font-family: "brandon-grotesque";
+		border: none;
+		background-color: $darkPurple;
+		color: $offWhite;
+		height: 4vh;
+		transition: 0.5s ease;
+		width: 10vw;
+	}
+	button:hover {
+		background-color: lighten($darkPurple, 10%);
+	}
+}

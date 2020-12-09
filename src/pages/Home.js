@@ -7,6 +7,9 @@ import MenuItem from "../components/common/MenuItem";
 import OrderSignedCopy from "../components/sections/OrderSignedCopy";
 import About from "../components/sections/About";
 import Author from "../components/sections/Author";
+// import FanArt from "../components/sections/FanArt";
+import HolidayHelp from "../components/sections/HolidayHelp";
+import NavMenu from "../components/common/NavMenu";
 
 //import images
 import backgroundImage from "../resources/images/Background_1.png";
@@ -28,11 +31,11 @@ export default class Home extends React.Component {
 
 	componentDidMount() {
 		Events.scrollEvent.register("begin", function () {
-			console.log("begin", arguments);
+			// console.log("begin", arguments);
 		});
 
 		Events.scrollEvent.register("end", function () {
-			console.log("end", arguments);
+			// console.log("end", arguments);
 		});
 		scrollSpy.update();
 	}
@@ -43,15 +46,19 @@ export default class Home extends React.Component {
 	}
 
 	scrollListener = (evt) => {
-		console.log(evt.target.scrollingElement.scrollTop);
+		// console.log(evt.target.scrollingElement.scrollTop);
 		let scrollAmount = evt.target.scrollingElement.scrollTop;
-		
+
 		if (scrollAmount >= 900) {
 			this.setState({ showMenu: true });
 		} else {
 			this.setState({ showMenu: false });
+			if (this.state.active) {
+				this.setState({ active: false });
+			}
 		}
-		console.log(scrollAmount);
+
+		// console.log(scrollAmount);
 	};
 	toggleNavMenu = () => {
 		this.setState({ active: !this.state.active });
@@ -79,9 +86,15 @@ export default class Home extends React.Component {
 				style={style}
 				id="pageContainer"
 				className={"pageContainer"}>
-				<div name="NAVMENU" className={navBtnClass}>
+				<div
+					onClick={this.toggleNavMenu}
+					name="NAVMENU"
+					className={navBtnClass}>
 					<img src={menuIcon}></img>
 				</div>
+				<NavMenu
+					toggleMenu={this.toggleNavMenu}
+					active={this.state.active}></NavMenu>
 				<div id="HOME" name="HOME" className="page home">
 					<div className="pageHeader">
 						<div className="card">
@@ -95,6 +108,8 @@ export default class Home extends React.Component {
 				<About></About>
 				<Author></Author>
 				<OrderSignedCopy></OrderSignedCopy>
+				<HolidayHelp></HolidayHelp>
+				{/* <FanArt></FanArt> */}
 			</div>
 		);
 	};
@@ -117,7 +132,8 @@ class HomeMenu extends React.Component {
 						window.open("https://www.amazon.com/dp/B08KGS8HMW", "_blank");
 					}}></MenuItem>
 
-				<MenuItem passback="FANART" text="FAN ART"></MenuItem>
+				<MenuItem passback="HOLIDAY" text="BEING FOUND GIVES BACK"></MenuItem>
+				{/* <MenuItem passback="FANART" text="FAN ART"></MenuItem> */}
 			</div>
 		);
 	};

@@ -15,7 +15,7 @@
 			width: 12vw;
 		}
 		button {
-			
+			height:3.55vh;
 			background-color: $offWhite;
 			border: none;
 			font-family: "brandon-grotesque";
@@ -27,6 +27,38 @@
             height:15vh;
             width:10vw;
 			background-color: unset;
+		}
+	}
+}
+.cardText{
+	.emailSignupContainer{
+		.emailInput {
+			max-width: max-content;
+	
+			margin: 5% auto;
+			input[type="email"] {
+				margin: 12.5% auto;
+				height: 3.25vh;
+				font-family: "brandon-grotesque";
+				font-size: 1.2rem;
+				background-color: $offWhite;
+				border: none;
+				width: 12vw;
+			}
+			button {
+				height:3.55vh;
+				background-color: $offWhite;
+				border: none;
+				font-family: "brandon-grotesque";
+				text-transform: uppercase;
+				font-size: 1.2rem;
+			}
+			img.loader {
+				margin: auto;
+				height:15vh;
+				width:10vw;
+				background-color: unset;
+			}
 		}
 	}
 }

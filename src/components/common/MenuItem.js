@@ -11,7 +11,7 @@ import {
 
 export default class MenuItem extends React.Component {
 	render = () => {
-		if (this.props.onClick)
+		if (this.props.onClick && this.props.override == false)
 			return (
 				<div
 					onClick={(evt) => {
@@ -29,7 +29,13 @@ export default class MenuItem extends React.Component {
 				smooth={true}
 				duration={1000}
 				to={this.props.passback}>
-				<div className="menuItem">
+				<div
+					className="menuItem"
+					onClick={(evt) => {
+						if (this.props.onClick) {
+							this.props.onClick();
+						}
+					}}>
 					<div className="itemText">{this.props.text}</div>
 				</div>
 			</Link>
