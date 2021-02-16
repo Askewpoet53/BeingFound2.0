@@ -19,17 +19,28 @@ export default class EmailInput extends React.Component {
 		this.setState({ loading: true });
 	};
 
+	componentDidMount = () => {
+		if (
+			(this.props.status == "done" || this.props.status == "error") &&
+			this.state.loading
+		) {
+			this.setState({ loading: false });
+		}
+	};
+
 	render = () => {
 		return (
 			<div className={this.props.className}>
 				{this.state.loading ? (
 					<img className="loader" src={Spinner}></img>
 				) : (
-					<div className="emailInput">
+					<div className="emailContainer">
 						<input
 							onChange={this.handleUpdate}
 							type="email"
-							placeholder="Your email"
+							placeholder={
+								this.props.placeholder ? this.props.placeholder : "Your email"
+							}
 						/>
 						<button onClick={this.submit}>Submit</button>
 					</div>

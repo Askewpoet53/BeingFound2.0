@@ -28,24 +28,30 @@ export default class NavMenu extends React.Component {
 						passback="ORDER"
 						text="ORDER SIGNED COPY"></MenuItem>
 
-					<MenuItem
+					{/* <MenuItem
 						onClick={this.props.toggleMenu}
 						override={true}
 						passback="HOLIDAY"
-						text="BEING FOUND GIVES BACK"></MenuItem>
+						text="BEING FOUND GIVES BACK"></MenuItem> */}
 
 					<MenuItem
 						passback="AMAZON"
 						text="ORDER E-BOOK 0R PAPERBACK ON AMAZON"
 						onClick={() => {
-							window.open("https://www.geeksforgeeks.org", "_blank");
+							window.open("https://www.amazon.com/dp/B08KGS8HMW", "_blank");
+						}}></MenuItem>
+						<MenuItem
+						passback="AUDIBLE"
+						text="LISTEN TO BOOK ON AUDIBLE"
+						onClick={() => {
+							window.open("https://www.audible.com/pd/B08WC89BBL/?source_code=AUDFPWS0223189MWT-BK-ACX0-238924&ref=acx_bty_BK_ACX0_238924_rh_us", "_blank");
 						}}></MenuItem>
 
-					<MenuItem
+					{/* <MenuItem
 						onClick={this.props.toggleMenu}
 						override={true}
 						passback="FANART"
-						text="FAN ART"></MenuItem>
+						text="FAN ART"></MenuItem> */}
 				</div>
 			</div>
 		);

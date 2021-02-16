@@ -1,6 +1,6 @@
 //import packages
 import React from "react";
-import { Events, scrollSpy } from "react-scroll";
+import { Events, scrollSpy, animateScroll as scroll } from "react-scroll";
 
 //import components
 import MenuItem from "../components/common/MenuItem";
@@ -15,12 +15,14 @@ import NavMenu from "../components/common/NavMenu";
 import backgroundImage from "../resources/images/Background_1.png";
 import bookImage from "../resources/images/being found SMALL.png";
 import menuIcon from "../resources/images/menu.svg";
+import closeIcon from "../resources/images/close.svg";
 
 const style = {
 	backgroundImage: `URL(${backgroundImage})`,
 	backgroundRepeat: "no-repeat",
 	backgroundAttachment: "fixed",
 	backgroundPosition: "center",
+	backgroundSize: "cover",
 };
 
 export default class Home extends React.Component {
@@ -37,12 +39,25 @@ export default class Home extends React.Component {
 		Events.scrollEvent.register("end", function () {
 			// console.log("end", arguments);
 		});
+
+		window.addEventListener("scroll", this.scrollListener);
 		scrollSpy.update();
+		if (this.props.scrollTo) {
+			console.log(this.props.scrollTo);
+			scroll.scrollTo(this.props.scrollTo, {
+				duration: 100,
+				smooth: true,
+				containerId: "pageContainer",
+				spy: true,
+			});
+		}
 	}
 
 	componentWillUnmount() {
 		Events.scrollEvent.remove("begin");
 		Events.scrollEvent.remove("end");
+
+		window.removeEventListener("scroll", this.scrollListener);
 	}
 
 	scrollListener = (evt) => {
@@ -64,13 +79,6 @@ export default class Home extends React.Component {
 		this.setState({ active: !this.state.active });
 	};
 
-	componentDidMount() {
-		window.addEventListener("scroll", this.scrollListener);
-	}
-
-	componentWillUnmount() {
-		window.removeEventListener("scroll", this.scrollListener);
-	}
 	render = () => {
 		let pageClass = this.state.active
 			? "pageContainer shovedOver"
@@ -90,7 +98,11 @@ export default class Home extends React.Component {
 					onClick={this.toggleNavMenu}
 					name="NAVMENU"
 					className={navBtnClass}>
-					<img src={menuIcon}></img>
+					{this.state.active ? (
+						<img className="navIcon" src={closeIcon}></img>
+					) : (
+						<img className="navIcon" src={menuIcon}></img>
+					)}
 				</div>
 				<NavMenu
 					toggleMenu={this.toggleNavMenu}
@@ -108,7 +120,7 @@ export default class Home extends React.Component {
 				<About></About>
 				<Author></Author>
 				<OrderSignedCopy></OrderSignedCopy>
-				<HolidayHelp></HolidayHelp>
+				{/* <HolidayHelp></HolidayHelp> */}
 				{/* <FanArt></FanArt> */}
 			</div>
 		);
@@ -131,8 +143,17 @@ class HomeMenu extends React.Component {
 					onClick={() => {
 						window.open("https://www.amazon.com/dp/B08KGS8HMW", "_blank");
 					}}></MenuItem>
+				<MenuItem
+					passback="AUDIBLE"
+					text="LISTEN TO BOOK ON AUDIBLE"
+					onClick={() => {
+						window.open(
+							"https://www.audible.com/pd/B08WC89BBL/?source_code=AUDFPWS0223189MWT-BK-ACX0-238924&ref=acx_bty_BK_ACX0_238924_rh_us",
+							"_blank"
+						);
+					}}></MenuItem>
 
-				<MenuItem passback="HOLIDAY" text="BEING FOUND GIVES BACK"></MenuItem>
+				{/* <MenuItem passback="HOLIDAY" text="BEING FOUND GIVES BACK"></MenuItem> */}
 				{/* <MenuItem passback="FANART" text="FAN ART"></MenuItem> */}
 			</div>
 		);

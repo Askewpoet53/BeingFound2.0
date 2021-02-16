@@ -1,4 +1,4 @@
-import React from "react"; 
+import React from "react";
 import {
 	Link,
 	Element,
@@ -20,7 +20,7 @@ import settings from "../../api/settings.json";
 import bookImage from "../../resources/images/being found SMALL.png";
 
 export default class About extends React.Component {
-	state = { email: null };
+	state = { email: null, status: null };
 
 	updateEmail = (evt) => {
 		this.setState({ email: evt });
@@ -28,35 +28,50 @@ export default class About extends React.Component {
 
 	onEmailSubmit = async (evt) => {
 		let result = regex.emailCheck.test(this.state.email);
-	
+
 		if (result) {
 			//send to back end
-			const response = await Axios.post(
-				settings.api.dev + "/signup-newsletter",
-				{
-					email: this.state.email,
-				},
-				{
-					headers: {
-						"Content-Type": "application/json",
+			try {
+				const response = await Axios.post(
+					settings.api.dev + "/signup-newsletter",
+					{
+						email: this.state.email,
 					},
-				}
-			);
+					{
+						headers: {
+							"Content-Type": "application/json",
+						},
+					}
+				);
 
-			localStorage.setItem("newsletter", "true");
+				localStorage.setItem("newsletter", "true");
 
-			alert(response.data);
+				alert(response.data);
+
+				this.setState({ status: "done" });
+			} catch (error) {
+				console.log(error);
+				this.setState({ status: "error" });
+				alert("Something went wrong try again later");
+			}
 		} else {
 			alert("Email is not valid");
 		}
-
+		regex.emailCheck.compile();
 		this.setState({ emailCheck: true });
 	};
+
+	componentDidMount() {
+		
+	}
+
 	render = () => {
 		return (
-			<div id="ABOUT" name="ABOUT" className="page about">
+			<Element id="ABOUT" name="ABOUT" className="page about">
 				{localStorage.getItem("newsletter") ? null : (
 					<EmailInputContainer
+					key={this.state.status}
+						status={this.state.status}
 						className="emailSignupContainer"
 						updateEmail={this.updateEmail}
 						onSubmit={this.onEmailSubmit}></EmailInputContainer>
@@ -115,7 +130,7 @@ export default class About extends React.Component {
 						</div>
 					</div>
 				</div>
-			</div>
+			</Element>
 		);
 	};
 }
@@ -124,8 +139,11 @@ class EmailInputContainer extends React.Component {
 	render = () => {
 		return (
 			<div className="emailSignup">
+				<p className="customText">Sign Up for our Newsletter!</p>
 				<EmailInput
-
+				key={this.props.status}
+					status={this.props.status}
+					placeholder={"Sign up for the Newsletter!"}
 					onSubmit={this.props.onSubmit}
 					updateEmail={this.props.updateEmail}
 					className={"emailInput"}></EmailInput>

@@ -1,185 +1,479 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-	
+	.pageContainer {
+		.pageHeader {
+			.cardImg.bookImg {
+				height: 300px;
+				width: auto;
+			}
+		}
+		.pageBody {
+			.homeMenu {
+				flex-direction: column;
+				a {
+					margin: 0;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.navMenuBtn {
+		right: 25px;
+		background-color: $darkPurple;
+		padding: 2.5%;
+		border-radius: 100px;
+		width: max-content;
+		.navIcon {
+			width: 7vw;
+			height: 7vw;
+		}
+	}
+
+	::-webkit-scrollbar {
+		display: none;
+	}
+
+	.emailSignup {
+		margin: 5% 0;
+		height: 25vh;
+		.emailInput {
+			width: 100%;
+			margin: none;
+			.emailContainer {
+				margin: 5% 0;
+
+				input[type="email"] {
+					font-family: "brandon-grotesque";
+					font-size: 1.2rem;
+					background-color: $offWhite;
+					border: none;
+					margin: 2% auto;
+					width: 100%;
+				}
+				button {
+					height: 5vh;
+					width: 100%;
+					margin: 5% auto;
+				}
+			}
+		}
+	}
+
+	.page.about {
+		.pageBody {
+			flex-direction: column;
+			.card {
+				max-width: 95vw;
+				.cardImg {
+					height: 300px;
+					width: auto;
+				}
+				.cardBody {
+					font-size: 1rem;
+				}
+				.cardAction {
+					width: 45vw;
+					// margin: unset;
+					a {
+						.button {
+							width: 45vw;
+						}
+					}
+				}
+			}
+		}
+	}
+	.page.author .pageBody {
+		flex-direction: column;
+		.card {
+			max-width: 95vw;
+			.cardImg {
+				height: 300px;
+				width: auto;
+			}
+			.cardBody {
+				font-size: 1rem;
+			}
+			.cardAction {
+				width: 45vw;
+				// margin: unset;
+				a {
+					.button {
+						width: 45vw;
+					}
+				}
+			}
+		}
+	}
+	.page.order .pageBody {
+		overflow: hidden;
+
+		flex-direction: column;
+		.card {
+			max-width: 95vw;
+			.cardImg {
+				height: 300px;
+				width: auto;
+			}
+			.cardBody {
+				font-size: 1rem;
+			}
+			.cardAction {
+				width: 85vw;
+				margin: 5% auto;
+				// margin: unset;
+				.breakLine {
+					font-size: 0.7rem;
+				}
+				.button {
+					width: 65vw;
+					.buttonText {
+						font-size: 0.8rem;
+					}
+				}
+			}
+		}
+	}
+	.page.holiday {
+		.pageHeader {
+			.titleText {
+				font-size: 1.3rem;
+			}
+		}
+		.pageBody {
+			flex-direction: column;
+
+			.card {
+				max-width: 95vw;
+				.cardImg {
+					height: 300px;
+					width: auto;
+				}
+				.cardBody {
+					font-size: 1rem;
+					margin: auto;
+				}
+				.cardAction {
+					width: 85vw;
+					margin: 5% auto;
+					// margin: unset;
+					.breakLine {
+						font-size: 0.7rem;
+					}
+					.button {
+						width: 65vw;
+						.buttonText {
+							font-size: 0.8rem;
+						}
+					}
+				}
+			}
+		}
+	}
+	.titleHeader {
+		.titleText {
+			font-size: 1.65rem;
+			font-weight: 700;
+			letter-spacing: 0.1rem;
+		}
+	}
+	.submitBtn {
+		button {
+			margin: 5% 0;
+			height: 5vh;
+			width: 45vw;
+		}
+	}
+	.formRow {
+		min-height: 10vh;
+	}
 	.pageContainer {
 		.navMenuContainer {
+			width: 100%;
 			top: 50px;
-			height: 75vh;
+			height: 100%;
+			z-index: 998;
 			position: fixed;
 			transition: 0.5s ease;
 			background-color: $darkPurple;
-			.menuItem {
-				margin: unset;
-				height: 5vh;
+
+			.navMenu {
+				min-height: 99vh;
+				margin: 15% auto;
+
+				
+					.menuItem {
+						height: min-content;
+						width: 75vw;
+						margin: 20% auto;
+						.itemText {
+							max-height: 10vh;
+						}
+					}
+				
 			}
 		}
-	
+
 		.navMenuContainer.hiddenNav {
-			top: 50px;
+			top: 0px;
 			right: -1000px;
 		}
-	
+
 		.navMenuContainer.activeNav {
-			top: 50px;
-			right: 100px;
+			top: 0px;
+			right: 0px;
 		}
 	}
-	
-
 }
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-	.navbarContainer {
-		.navbarMenuBtnContainer {
-			margin-top: 5%;
-			margin-left: 89%;
-		}
-	}
-
-	.navbarMenuContainer.active {
-		right: 0;
-		top: 15vh;
-		height: 85vh;
-		width: 100%;
-		background-color: rgba(0, 0, 0, 0.5);
-	}
-	.aboutPageContainer {
-		.bookImageContainer {
-			img {
+	.pageContainer {
+		.pageHeader {
+			.cardImg.bookImg {
+				height: 500px;
 				width: auto;
-				height: 40vh;
 			}
 		}
-	}
-	.navbarMenuContainer.hidden {
-		right: -1300px !important;
-		top: 15vh;
-		height: 85vh;
-		width: 100%;
-		background-color: rgba(0, 0, 0, 0.5);
-	}
-	.cardHeader {
-		margin-top: 10%;
-		.cardHeaderText {
-			max-width: max-content;
-			max-height: max-content;
-			font-size: 2.5rem;
-		}
-	}
-	.cardBody {
-		margin: 5%;
-		max-height: fit-content;
-		max-width: 85%;
-	}
-	.cardBodyText {
-		font-size: 1.6rem;
-	}
-	.horizNavMenu {
-		max-height: 70vh !important;
-		flex-direction: column !important;
-
-		.navMenuItemContainer {
-			width: 40vw;
-			max-height: 10vh !important;
-			margin: auto auto !important;
-			.linkText {
-				font-size: 0.9rem;
-			}
-		}
-	}
-	.preorderPage {
-		.cardHeader {
-			.cardHeaderText {
-				font-size: 2rem;
-			}
-		}
-		.subtitleCard {
-			max-height: 13vh;
-			padding: 0 2%;
-			.subtitleText {
-				font-size: 1.2rem;
-				line-height: 1.1rem;
-				letter-spacing: 0.1rem;
-			}
-		}
-		.cardBody.flexRow {
-			max-height: 60vh;
-			.checkoutSectionContainer {
-				height: max-content;
-				width: 50%;
-				.bookSideInfoContainer {
-					height: max-content;
-					.bookSideInfoText {
-						font-size: 1rem;
-						line-height: 1.1rem;
-						letter-spacing: 0.1rem;
-					}
-					.buyNowBtn {
-						width: 20vw;
+		.pageBody {
+			.homeMenu {
+				flex-direction: column;
+				a {
+					margin: 0;
+					width: 100%;
+					.menuItem{
+						font-size:2rem;
 					}
 				}
 			}
-			.bookImageContainer {
-				width: auto;
-				height: 45vh;
-				margin: auto;
-			}
 		}
 	}
-	.modalCurtain {
-		position: absolute;
-		width: 100vw;
-		height: 100vh;
-		transition: 0.5s ease;
-		flex-direction: column;
-		.modalContainer {
-			flex-direction: column;
-			margin: auto;
-			max-width: 80vw;
-			min-height: 45vh;
-			div {
-				margin: auto;
-				min-width: 60%;
-				max-height: 5vh;
+
+	.navMenuBtn {
+		right: 25px;
+		background-color: $darkPurple;
+		padding: 2.5%;
+		border-radius: 100px;
+		width: max-content;
+		.navIcon {
+			width: 7vw;
+			height: 7vw;
+		}
+	}
+
+	::-webkit-scrollbar {
+		display: none;
+	}
+
+	.emailSignup {
+		margin: 5% 0;
+		height: 25vh;
+		.customText{
+			font-size:2rem;
+		}
+		.emailInput {
+			width: 100%;
+			margin: none;
+			.emailContainer {
+				margin: 5% 0;
+
 				input[type="email"] {
-					min-width: 75%;
 					font-family: "brandon-grotesque";
-					font-size: 1.7rem;
-					border: none;
-					background-color: lighten($darkPurple, 5%);
-					color: darken($offWhite, 5%);
-				}
-
-				button {
-					font-family: "brandon-grotesque";
-					text-transform: uppercase;
-					font-weight: 700;
+					font-size: 1.4rem;
 					background-color: $offWhite;
 					border: none;
-					font-size: 1.7rem;
+					margin: 2% auto;
+					width: 100%;
+				}
+				button {
+					height: 5vh;
+					width: 100%;
+					margin: 5% auto;
 				}
 			}
 		}
-		.modalCloseImgContainer {
-			max-height: 15vw;
+	}
 
-			.modalCloseImg {
-				margin-left: auto;
-				margin-right: 5vw;
-				margin-top: 1%;
-				width: 5vw;
+	.page.about {
+		.pageBody {
+			flex-direction: column;
+			.card {
+				max-width: 95vw;
+				.cardImg {
+					height: 300px;
+					width: auto;
+				}
+				.cardBody {
+					font-size: 1.3rem;
+				}
+				.cardAction {
+					width: 45vw;
+					// margin: unset;
+					a {
+						.button {
+							width: 45vw;
+						}
+					}
+				}
+				.cardText{
+					font-size:1.5rem;
+					line-height:1.5rem;
+				}
 			}
 		}
 	}
-
-	.modalCurtain.active {
-		position: absolute;
-		background-color: rgba(0, 0, 0, 0.5);
-		top: 0;
+	.page.author .pageBody {
+		flex-direction: column;
+		.card {
+			max-width: 95vw;
+			.cardImg {
+				height: 300px;
+				width: auto;
+			}
+			.cardBody {
+				font-size: 1rem;
+			}
+			.cardAction {
+				width: 45vw;
+				// margin: unset;
+				a {
+					.button {
+						width: 45vw;
+					}
+				}
+			}
+			.cardText{
+				font-size:1.5rem;
+				line-height:1.5rem;
+			}
+		}
 	}
-	.modalCurtain.inactive {
-		position: absolute;
-		top: -100vh;
+	.page.order .pageBody {
+		overflow: hidden;
+
+		flex-direction: column;
+		.card {
+			max-width: 95vw;
+			.cardImg {
+				height: 300px;
+				width: auto;
+			}
+			.cardBody {
+				font-size: 1rem;
+			}
+			.cardAction {
+				width: 85vw;
+				margin: 5% auto;
+				// margin: unset;
+				.breakLine {
+					font-size: 0.7rem;
+				}
+				.button {
+					width: 65vw;
+					.buttonText {
+						font-size: 0.8rem;
+					}
+				}
+			}
+			.cardText{
+				font-size:1.5rem;
+				line-height:1.5rem;
+			}
+		}
+	}
+	.page.holiday {
+		.pageHeader {
+			.titleText {
+				font-size: 1.3rem;
+			}
+		}
+		.pageBody {
+			flex-direction: column;
+
+			.card {
+				max-width: 95vw;
+				.cardImg {
+					height: 300px;
+					width: auto;
+				}
+				.cardBody {
+					font-size: 1rem;
+					margin: auto;
+				}
+				.cardAction {
+					width: 85vw;
+					margin: 5% auto;
+					// margin: unset;
+					.breakLine {
+						font-size: 0.7rem;
+					}
+					.button {
+						width: 65vw;
+						.buttonText {
+							font-size: 0.8rem;
+						}
+					}
+				}
+				.cardText{
+					font-size:1.5rem;
+					line-height:1.5rem;
+				}
+			}
+		}
+	}
+	.titleHeader {
+		.titleText {
+			font-size: 1.65rem;
+			font-weight: 700;
+			letter-spacing: 0.1rem;
+		}
+	}
+	.submitBtn {
+		button {
+			margin: 5% 0;
+			height: 5vh;
+			width: 45vw;
+		}
+	}
+	.formRow {
+		min-height: 10vh;
+	}
+	.pageContainer {
+		.navMenuContainer {
+			width: 100%;
+			top: 50px;
+			height: 100%;
+			z-index: 998;
+			position: fixed;
+			transition: 0.5s ease;
+			background-color: $darkPurple;
+
+			.navMenu {
+				min-height: 99vh;
+				margin: 15% auto;
+
+				
+					.menuItem {
+						height: min-content;
+						width: 75vw;
+						margin: 20% auto;
+						.itemText {
+							max-height: 10vh;
+						}
+					}
+				
+			}
+		}
+
+		.navMenuContainer.hiddenNav {
+			top: 0px;
+			right: -1000px;
+		}
+
+		.navMenuContainer.activeNav {
+			top: 0px;
+			right: 0px;
+		}
 	}
 }
 
@@ -225,14 +519,14 @@
 	}
 	.cardHeader {
 		margin-top: 5%;
-		max-height:10vh;
-		.cardHeaderText{
-			font-size:1.3rem
+		max-height: 10vh;
+		.cardHeaderText {
+			font-size: 1.3rem;
 		}
 	}
-	.subtitleCard{
-		.subtitleText{
-			font-size: .9rem;
+	.subtitleCard {
+		.subtitleText {
+			font-size: 0.9rem;
 		}
 	}
 	.cardBody {
@@ -481,7 +775,7 @@
 // 			div {
 // 				margin:auto;
 // 				input[type="email"] {
-					
+
 // 					font-family: "brandon-grotesque";
 // 					font-size: 1rem;
 // 					border: none;

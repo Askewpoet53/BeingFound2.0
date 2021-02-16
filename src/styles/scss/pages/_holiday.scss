@@ -3,10 +3,21 @@
 	flex-direction: column;
 	.formRow {
 		min-height: 5vh;
+		height: max-content;
 		label {
-			margin: auto;
-			height: max-content;
+			// margin: auto;
+			min-width: 100%;
+			min-height: 5vh;
 		}
+		.nomineeImgBtn{
+			border:none;
+			.uploadNomineeImg{
+				border:none;
+				height:20px;
+				width:auto;
+			}
+		}
+
 		input {
 			margin: 1%;
 			font-family: "brandon-grotesque";
@@ -30,9 +41,9 @@
 			font-weight: 700;
 			color: $offWhite;
 			background-color: $darkPurple;
-			padding: 1% 2%;
-			margin: 5% 10%;
-			width: 100%;
+			padding: 0.5% 5%;
+			height: 10vh;
+			min-width: 100%;
 			transition: 0.5s ease;
 			outline: 1px dotted #000;
 			outline: -webkit-focus-ring-color auto 5px;
@@ -72,5 +83,36 @@
 	}
 	button:hover {
 		background-color: lighten($darkPurple, 10%);
+	}
+}
+
+
+.page.holiday {
+	.pageHeader {
+		margin: auto;
+	}
+	.pageBody {
+		display: flex;
+		flex-direction: row;
+		.card {
+			margin: 5% auto;
+			max-width: 35vw;
+			height: max-content;
+			.cardBody {
+				height: 45%;
+				width: 85%;
+				line-height: 1.2rem;
+				font-size: 1.2rem;
+				margin: 5% auto 0;
+			}
+			.cardAction {
+				width: 20vw;
+				margin: 4% auto 5%;
+				.breakLine {
+					margin: 4% auto;
+					width: max-content;
+				}
+			}
+		}
 	}
 }

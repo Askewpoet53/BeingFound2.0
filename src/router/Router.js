@@ -9,9 +9,33 @@ export default function router() {
 		<main>
 			<BrowserRouter>
 				<Switch>
-					<Route exact path="/" component={App}></Route>
 					<Route path="/success" component={Success}></Route>
 					<Route path="/error" component={Error}></Route>
+					<Route exact path="/" component={App}></Route>
+					<Route
+						exact
+						path="/about"
+						render={(props) => {
+							return <App {...props} scrollTo={"ABOUT"}></App>;
+						}}></Route>
+					<Route
+						exact
+						path="/author"
+						render={(props) => {
+							return <App {...props} scrollTo={"AUTHOR"}></App>;
+						}}></Route>
+					<Route
+						exact
+						path="/order"
+						render={(props) => {
+							return <App {...props} scrollTo={"ORDER"}></App>;
+						}}></Route>
+					<Route
+						exact
+						path="/holidayhelp"
+						render={(props) => {
+							return <App {...props} scrollTo={"HOLIDAY"}></App>;
+						}}></Route>
 				</Switch>
 			</BrowserRouter>
 		</main>

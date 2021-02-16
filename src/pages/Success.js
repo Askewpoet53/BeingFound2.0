@@ -13,11 +13,12 @@ import settings from "../api/settings.json";
 import backgroundImage from "../resources/images/Background_1.png";
 
 
-let style = {
+const style = {
 	backgroundImage: `URL(${backgroundImage})`,
 	backgroundRepeat: "no-repeat",
 	backgroundAttachment: "fixed",
 	backgroundPosition: "center",
+	backgroundSize: "cover",
 };
 
 export default class Success extends React.Component {

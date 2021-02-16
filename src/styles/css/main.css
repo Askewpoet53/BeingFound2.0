@@ -141,7 +141,7 @@ html {
   padding: 2%;
   width: max-content;
   margin: 5% auto;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   color: #efe5db; }
   .card .cardText {
     font-size: 1.2rem;
@@ -166,18 +166,27 @@ html {
   width: auto;
   height: 500px; }
 
+.customText {
+  color: #efe5db;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 2%; }
+
 .menuItem {
   background-color: #110f17;
   color: #efe5db;
   flex: 1;
   height: 10vh;
   width: 30vw;
+  cursor: pointer;
   margin: 0 2%;
   /* For Mozilla Firefox */ }
   .menuItem .itemText {
     max-height: 4vh;
     max-width: max-content;
     margin: auto;
+    padding: 0 2%;
     margin-top: 12%;
     text-align: center; }
   .menuItem ::selection {
@@ -208,7 +217,11 @@ html {
   top: 20px;
   opacity: 0;
   z-index: 999;
-  transition: 0.5s ease; }
+  transition: 0.5s ease;
+  width: 2.5vw; }
+
+.navIcon {
+  width: 2.5vw; }
 
 .navMenuBtn.navBtnActive {
   opacity: 1; }
@@ -291,286 +304,9 @@ html {
     width: 10vw;
     background-color: unset; }
 
-.pageContainer {
-  min-height: 100vh;
-  width: 100vw;
-  margin: auto;
-  overflow: auto;
-  overflow-x: hidden; }
+.emailSignup .emailInput {
+  margin-top: 0%; }
 
-.page {
-  min-height: 90vh;
-  width: 100vw;
-  overflow-x: hidden; }
-
-.pageContainer .navMenuContainer {
-  top: 50px;
-  height: 75vh;
-  position: fixed;
-  transition: 0.5s ease;
-  background-color: #110f17; }
-  .pageContainer .navMenuContainer .menuItem {
-    margin: unset;
-    height: 5vh; }
-
-.pageContainer .navMenuContainer.hiddenNav {
-  top: 50px;
-  right: -1000px; }
-
-.pageContainer .navMenuContainer.activeNav {
-  top: 50px;
-  right: 100px; }
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .pageContainer .navMenuContainer {
-    top: 50px;
-    height: 75vh;
-    position: fixed;
-    transition: 0.5s ease;
-    background-color: #110f17; }
-    .pageContainer .navMenuContainer .menuItem {
-      margin: unset;
-      height: 5vh; }
-  .pageContainer .navMenuContainer.hiddenNav {
-    top: 50px;
-    right: -1000px; }
-  .pageContainer .navMenuContainer.activeNav {
-    top: 50px;
-    right: 100px; } }
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .navbarContainer .navbarMenuBtnContainer {
-    margin-top: 5%;
-    margin-left: 89%; }
-  .navbarMenuContainer.active {
-    right: 0;
-    top: 15vh;
-    height: 85vh;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); }
-  .aboutPageContainer .bookImageContainer img {
-    width: auto;
-    height: 40vh; }
-  .navbarMenuContainer.hidden {
-    right: -1300px !important;
-    top: 15vh;
-    height: 85vh;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); }
-  .cardHeader {
-    margin-top: 10%; }
-    .cardHeader .cardHeaderText {
-      max-width: max-content;
-      max-height: max-content;
-      font-size: 2.5rem; }
-  .cardBody {
-    margin: 5%;
-    max-height: fit-content;
-    max-width: 85%; }
-  .cardBodyText {
-    font-size: 1.6rem; }
-  .horizNavMenu {
-    max-height: 70vh !important;
-    flex-direction: column !important; }
-    .horizNavMenu .navMenuItemContainer {
-      width: 40vw;
-      max-height: 10vh !important;
-      margin: auto auto !important; }
-      .horizNavMenu .navMenuItemContainer .linkText {
-        font-size: 0.9rem; }
-  .preorderPage .cardHeader .cardHeaderText {
-    font-size: 2rem; }
-  .preorderPage .subtitleCard {
-    max-height: 13vh;
-    padding: 0 2%; }
-    .preorderPage .subtitleCard .subtitleText {
-      font-size: 1.2rem;
-      line-height: 1.1rem;
-      letter-spacing: 0.1rem; }
-  .preorderPage .cardBody.flexRow {
-    max-height: 60vh; }
-    .preorderPage .cardBody.flexRow .checkoutSectionContainer {
-      height: max-content;
-      width: 50%; }
-      .preorderPage .cardBody.flexRow .checkoutSectionContainer .bookSideInfoContainer {
-        height: max-content; }
-        .preorderPage .cardBody.flexRow .checkoutSectionContainer .bookSideInfoContainer .bookSideInfoText {
-          font-size: 1rem;
-          line-height: 1.1rem;
-          letter-spacing: 0.1rem; }
-        .preorderPage .cardBody.flexRow .checkoutSectionContainer .bookSideInfoContainer .buyNowBtn {
-          width: 20vw; }
-    .preorderPage .cardBody.flexRow .bookImageContainer {
-      width: auto;
-      height: 45vh;
-      margin: auto; }
-  .modalCurtain {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    transition: 0.5s ease;
-    flex-direction: column; }
-    .modalCurtain .modalContainer {
-      flex-direction: column;
-      margin: auto;
-      max-width: 80vw;
-      min-height: 45vh; }
-      .modalCurtain .modalContainer div {
-        margin: auto;
-        min-width: 60%;
-        max-height: 5vh; }
-        .modalCurtain .modalContainer div input[type="email"] {
-          min-width: 75%;
-          font-family: "brandon-grotesque";
-          font-size: 1.7rem;
-          border: none;
-          background-color: #1c1926;
-          color: #e7d8c9; }
-        .modalCurtain .modalContainer div button {
-          font-family: "brandon-grotesque";
-          text-transform: uppercase;
-          font-weight: 700;
-          background-color: #efe5db;
-          border: none;
-          font-size: 1.7rem; }
-    .modalCurtain .modalCloseImgContainer {
-      max-height: 15vw; }
-      .modalCurtain .modalCloseImgContainer .modalCloseImg {
-        margin-left: auto;
-        margin-right: 5vw;
-        margin-top: 1%;
-        width: 5vw; }
-  .modalCurtain.active {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 0; }
-  .modalCurtain.inactive {
-    position: absolute;
-    top: -100vh; } }
-
-/* iPads (landscape) ----------- */
-/* iPads (portrait) ----------- */
-/* Desktops and laptops ----------- */
-/* Large screens ----------- */
-/* iPhone 5 (portrait &amp; landscape)----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  .navbarContainer .navbarMenuBtnContainer {
-    margin-top: 5%;
-    margin-left: 80%; }
-  .navbarMenuContainer.active {
-    right: 0;
-    top: 15vh;
-    height: 85vh;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); }
-  .navbarMenuContainer.hidden {
-    right: -500px;
-    top: 15vh;
-    height: 85vh;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); }
-  .cardHeader {
-    margin-top: 5%;
-    max-height: 10vh; }
-    .cardHeader .cardHeaderText {
-      font-size: 1.3rem; }
-  .subtitleCard .subtitleText {
-    font-size: .9rem; }
-  .cardBody {
-    margin-top: 5%;
-    max-height: fit-content;
-    max-width: 85%; }
-    .cardBody .cardBodyText {
-      font-size: 1rem; }
-  .horizNavMenu {
-    flex-direction: column;
-    max-height: 70vh !important; }
-    .horizNavMenu .navMenuItemContainer {
-      margin-top: 10%; }
-  .preorderPage .cardHeader .cardHeaderText {
-    font-size: 1.4rem; }
-  .preorderPage .subtitleCard {
-    max-height: 20vh;
-    padding: 0 1%; }
-    .preorderPage .subtitleCard .subtitleText {
-      font-size: 0.9rem; }
-  .preorderPage .cardBody.flexRow {
-    max-height: 60vh;
-    flex-direction: column !important; }
-    .preorderPage .cardBody.flexRow .checkoutSectionContainer {
-      height: max-content; }
-      .preorderPage .cardBody.flexRow .checkoutSectionContainer .bookSideInfoContainer {
-        height: max-content; }
-        .preorderPage .cardBody.flexRow .checkoutSectionContainer .bookSideInfoContainer .bookSideInfoText {
-          font-size: 1rem; }
-        .preorderPage .cardBody.flexRow .checkoutSectionContainer .bookSideInfoContainer .buyNowBtn {
-          width: 50vw; }
-    .preorderPage .cardBody.flexRow .bookImageContainer {
-      width: auto;
-      height: 30vh;
-      margin: auto; }
-  .aboutPageContainer {
-    flex-direction: column !important;
-    overflow-y: auto;
-    max-height: 75vh;
-    padding-bottom: 2%; }
-    .aboutPageContainer .bookImageContainer {
-      max-height: fit-content;
-      margin: auto; }
-      .aboutPageContainer .bookImageContainer img {
-        width: auto;
-        max-height: 30vh; }
-    .aboutPageContainer .cardContentContainer {
-      flex-direction: column; }
-      .aboutPageContainer .cardContentContainer .emphasisText {
-        font-size: 1.7rem !important;
-        text-align: center; }
-  .modalCurtain {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    transition: 0.5s ease;
-    flex-direction: column; }
-    .modalCurtain .modalContainer {
-      flex-direction: column;
-      margin: auto;
-      max-width: 100vw;
-      min-height: 65vh; }
-      .modalCurtain .modalContainer div {
-        margin: auto;
-        min-width: 60%;
-        max-height: 5vh; }
-        .modalCurtain .modalContainer div input[type="email"] {
-          min-width: 75%;
-          font-family: "brandon-grotesque";
-          font-size: 1.2rem;
-          border: none;
-          background-color: #1c1926;
-          color: #e7d8c9; }
-        .modalCurtain .modalContainer div button {
-          font-family: "brandon-grotesque";
-          text-transform: uppercase;
-          font-weight: 700;
-          background-color: #efe5db;
-          border: none;
-          font-size: 1.2rem; }
-    .modalCurtain .modalCloseImgContainer {
-      max-height: 15vw; }
-      .modalCurtain .modalCloseImgContainer .modalCloseImg {
-        margin-left: auto;
-        margin-right: 5vw;
-        margin-top: 1%;
-        width: 5vw; }
-  .modalCurtain.active {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 0; }
-  .modalCurtain.inactive {
-    position: absolute;
-    top: -100vh; } }
-
-/* Glaxay Fold (landscape)----------- */
 .homeMenu {
   display: flex;
   flex-direction: row;
@@ -677,10 +413,17 @@ html {
   display: flex;
   flex-direction: column; }
   .holidayNomineeForm .formRow {
-    min-height: 5vh; }
+    min-height: 5vh;
+    height: max-content; }
     .holidayNomineeForm .formRow label {
-      margin: auto;
-      height: max-content; }
+      min-width: 100%;
+      min-height: 5vh; }
+    .holidayNomineeForm .formRow .nomineeImgBtn {
+      border: none; }
+      .holidayNomineeForm .formRow .nomineeImgBtn .uploadNomineeImg {
+        border: none;
+        height: 20px;
+        width: auto; }
     .holidayNomineeForm .formRow input {
       margin: 1%;
       font-family: "brandon-grotesque";
@@ -700,9 +443,9 @@ html {
       font-weight: 700;
       color: #efe5db;
       background-color: #110f17;
-      padding: 1% 2%;
-      margin: 5% 10%;
-      width: 100%;
+      padding: 0.5% 5%;
+      height: 10vh;
+      min-width: 100%;
       transition: 0.5s ease;
       outline: 1px dotted #000;
       outline: -webkit-focus-ring-color auto 5px; }
@@ -733,3 +476,475 @@ html {
     width: 10vw; }
   .submitBtn button:hover {
     background-color: #282336; }
+
+.page.holiday .pageHeader {
+  margin: auto; }
+
+.page.holiday .pageBody {
+  display: flex;
+  flex-direction: row; }
+  .page.holiday .pageBody .card {
+    margin: 5% auto;
+    max-width: 35vw;
+    height: max-content; }
+    .page.holiday .pageBody .card .cardBody {
+      height: 45%;
+      width: 85%;
+      line-height: 1.2rem;
+      font-size: 1.2rem;
+      margin: 5% auto 0; }
+    .page.holiday .pageBody .card .cardAction {
+      width: 20vw;
+      margin: 4% auto 5%; }
+      .page.holiday .pageBody .card .cardAction .breakLine {
+        margin: 4% auto;
+        width: max-content; }
+
+.pageContainer {
+  min-height: 100vh;
+  width: 100vw;
+  margin: auto;
+  overflow: auto;
+  overflow-x: hidden; }
+
+.page {
+  min-height: 90vh;
+  width: 100vw;
+  overflow-x: hidden; }
+
+.pageContainer .navMenuContainer {
+  top: 50px;
+  height: 75vh;
+  z-index: 998;
+  position: fixed;
+  transition: 0.5s ease;
+  background-color: #110f17; }
+  .pageContainer .navMenuContainer .menuItem {
+    margin: unset;
+    height: 5vh; }
+
+.pageContainer .navMenuContainer.hiddenNav {
+  top: 50px;
+  right: -1000px; }
+
+.pageContainer .navMenuContainer.activeNav {
+  top: 50px;
+  right: 100px; }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .pageContainer .pageHeader .cardImg.bookImg {
+    height: 300px;
+    width: auto; }
+  .pageContainer .pageBody .homeMenu {
+    flex-direction: column; }
+    .pageContainer .pageBody .homeMenu a {
+      margin: 0;
+      width: 100%; }
+  .navMenuBtn {
+    right: 25px;
+    background-color: #110f17;
+    padding: 2.5%;
+    border-radius: 100px;
+    width: max-content; }
+    .navMenuBtn .navIcon {
+      width: 7vw;
+      height: 7vw; }
+  ::-webkit-scrollbar {
+    display: none; }
+  .emailSignup {
+    margin: 5% 0;
+    height: 25vh; }
+    .emailSignup .emailInput {
+      width: 100%;
+      margin: none; }
+      .emailSignup .emailInput .emailContainer {
+        margin: 5% 0; }
+        .emailSignup .emailInput .emailContainer input[type="email"] {
+          font-family: "brandon-grotesque";
+          font-size: 1.2rem;
+          background-color: #efe5db;
+          border: none;
+          margin: 2% auto;
+          width: 100%; }
+        .emailSignup .emailInput .emailContainer button {
+          height: 5vh;
+          width: 100%;
+          margin: 5% auto; }
+  .page.about .pageBody {
+    flex-direction: column; }
+    .page.about .pageBody .card {
+      max-width: 95vw; }
+      .page.about .pageBody .card .cardImg {
+        height: 300px;
+        width: auto; }
+      .page.about .pageBody .card .cardBody {
+        font-size: 1rem; }
+      .page.about .pageBody .card .cardAction {
+        width: 45vw; }
+        .page.about .pageBody .card .cardAction a .button {
+          width: 45vw; }
+  .page.author .pageBody {
+    flex-direction: column; }
+    .page.author .pageBody .card {
+      max-width: 95vw; }
+      .page.author .pageBody .card .cardImg {
+        height: 300px;
+        width: auto; }
+      .page.author .pageBody .card .cardBody {
+        font-size: 1rem; }
+      .page.author .pageBody .card .cardAction {
+        width: 45vw; }
+        .page.author .pageBody .card .cardAction a .button {
+          width: 45vw; }
+  .page.order .pageBody {
+    overflow: hidden;
+    flex-direction: column; }
+    .page.order .pageBody .card {
+      max-width: 95vw; }
+      .page.order .pageBody .card .cardImg {
+        height: 300px;
+        width: auto; }
+      .page.order .pageBody .card .cardBody {
+        font-size: 1rem; }
+      .page.order .pageBody .card .cardAction {
+        width: 85vw;
+        margin: 5% auto; }
+        .page.order .pageBody .card .cardAction .breakLine {
+          font-size: 0.7rem; }
+        .page.order .pageBody .card .cardAction .button {
+          width: 65vw; }
+          .page.order .pageBody .card .cardAction .button .buttonText {
+            font-size: 0.8rem; }
+  .page.holiday .pageHeader .titleText {
+    font-size: 1.3rem; }
+  .page.holiday .pageBody {
+    flex-direction: column; }
+    .page.holiday .pageBody .card {
+      max-width: 95vw; }
+      .page.holiday .pageBody .card .cardImg {
+        height: 300px;
+        width: auto; }
+      .page.holiday .pageBody .card .cardBody {
+        font-size: 1rem;
+        margin: auto; }
+      .page.holiday .pageBody .card .cardAction {
+        width: 85vw;
+        margin: 5% auto; }
+        .page.holiday .pageBody .card .cardAction .breakLine {
+          font-size: 0.7rem; }
+        .page.holiday .pageBody .card .cardAction .button {
+          width: 65vw; }
+          .page.holiday .pageBody .card .cardAction .button .buttonText {
+            font-size: 0.8rem; }
+  .titleHeader .titleText {
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem; }
+  .submitBtn button {
+    margin: 5% 0;
+    height: 5vh;
+    width: 45vw; }
+  .formRow {
+    min-height: 10vh; }
+  .pageContainer .navMenuContainer {
+    width: 100%;
+    top: 50px;
+    height: 100%;
+    z-index: 998;
+    position: fixed;
+    transition: 0.5s ease;
+    background-color: #110f17; }
+    .pageContainer .navMenuContainer .navMenu {
+      min-height: 99vh;
+      margin: 15% auto; }
+      .pageContainer .navMenuContainer .navMenu .menuItem {
+        height: min-content;
+        width: 75vw;
+        margin: 20% auto; }
+        .pageContainer .navMenuContainer .navMenu .menuItem .itemText {
+          max-height: 10vh; }
+  .pageContainer .navMenuContainer.hiddenNav {
+    top: 0px;
+    right: -1000px; }
+  .pageContainer .navMenuContainer.activeNav {
+    top: 0px;
+    right: 0px; } }
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .pageContainer .pageHeader .cardImg.bookImg {
+    height: 500px;
+    width: auto; }
+  .pageContainer .pageBody .homeMenu {
+    flex-direction: column; }
+    .pageContainer .pageBody .homeMenu a {
+      margin: 0;
+      width: 100%; }
+      .pageContainer .pageBody .homeMenu a .menuItem {
+        font-size: 2rem; }
+  .navMenuBtn {
+    right: 25px;
+    background-color: #110f17;
+    padding: 2.5%;
+    border-radius: 100px;
+    width: max-content; }
+    .navMenuBtn .navIcon {
+      width: 7vw;
+      height: 7vw; }
+  ::-webkit-scrollbar {
+    display: none; }
+  .emailSignup {
+    margin: 5% 0;
+    height: 25vh; }
+    .emailSignup .customText {
+      font-size: 2rem; }
+    .emailSignup .emailInput {
+      width: 100%;
+      margin: none; }
+      .emailSignup .emailInput .emailContainer {
+        margin: 5% 0; }
+        .emailSignup .emailInput .emailContainer input[type="email"] {
+          font-family: "brandon-grotesque";
+          font-size: 1.4rem;
+          background-color: #efe5db;
+          border: none;
+          margin: 2% auto;
+          width: 100%; }
+        .emailSignup .emailInput .emailContainer button {
+          height: 5vh;
+          width: 100%;
+          margin: 5% auto; }
+  .page.about .pageBody {
+    flex-direction: column; }
+    .page.about .pageBody .card {
+      max-width: 95vw; }
+      .page.about .pageBody .card .cardImg {
+        height: 300px;
+        width: auto; }
+      .page.about .pageBody .card .cardBody {
+        font-size: 1.3rem; }
+      .page.about .pageBody .card .cardAction {
+        width: 45vw; }
+        .page.about .pageBody .card .cardAction a .button {
+          width: 45vw; }
+      .page.about .pageBody .card .cardText {
+        font-size: 1.5rem;
+        line-height: 1.5rem; }
+  .page.author .pageBody {
+    flex-direction: column; }
+    .page.author .pageBody .card {
+      max-width: 95vw; }
+      .page.author .pageBody .card .cardImg {
+        height: 300px;
+        width: auto; }
+      .page.author .pageBody .card .cardBody {
+        font-size: 1rem; }
+      .page.author .pageBody .card .cardAction {
+        width: 45vw; }
+        .page.author .pageBody .card .cardAction a .button {
+          width: 45vw; }
+      .page.author .pageBody .card .cardText {
+        font-size: 1.5rem;
+        line-height: 1.5rem; }
+  .page.order .pageBody {
+    overflow: hidden;
+    flex-direction: column; }
+    .page.order .pageBody .card {
+      max-width: 95vw; }
+      .page.order .pageBody .card .cardImg {
+        height: 300px;
+        width: auto; }
+      .page.order .pageBody .card .cardBody {
+        font-size: 1rem; }
+      .page.order .pageBody .card .cardAction {
+        width: 85vw;
+        margin: 5% auto; }
+        .page.order .pageBody .card .cardAction .breakLine {
+          font-size: 0.7rem; }
+        .page.order .pageBody .card .cardAction .button {
+          width: 65vw; }
+          .page.order .pageBody .card .cardAction .button .buttonText {
+            font-size: 0.8rem; }
+      .page.order .pageBody .card .cardText {
+        font-size: 1.5rem;
+        line-height: 1.5rem; }
+  .page.holiday .pageHeader .titleText {
+    font-size: 1.3rem; }
+  .page.holiday .pageBody {
+    flex-direction: column; }
+    .page.holiday .pageBody .card {
+      max-width: 95vw; }
+      .page.holiday .pageBody .card .cardImg {
+        height: 300px;
+        width: auto; }
+      .page.holiday .pageBody .card .cardBody {
+        font-size: 1rem;
+        margin: auto; }
+      .page.holiday .pageBody .card .cardAction {
+        width: 85vw;
+        margin: 5% auto; }
+        .page.holiday .pageBody .card .cardAction .breakLine {
+          font-size: 0.7rem; }
+        .page.holiday .pageBody .card .cardAction .button {
+          width: 65vw; }
+          .page.holiday .pageBody .card .cardAction .button .buttonText {
+            font-size: 0.8rem; }
+      .page.holiday .pageBody .card .cardText {
+        font-size: 1.5rem;
+        line-height: 1.5rem; }
+  .titleHeader .titleText {
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem; }
+  .submitBtn button {
+    margin: 5% 0;
+    height: 5vh;
+    width: 45vw; }
+  .formRow {
+    min-height: 10vh; }
+  .pageContainer .navMenuContainer {
+    width: 100%;
+    top: 50px;
+    height: 100%;
+    z-index: 998;
+    position: fixed;
+    transition: 0.5s ease;
+    background-color: #110f17; }
+    .pageContainer .navMenuContainer .navMenu {
+      min-height: 99vh;
+      margin: 15% auto; }
+      .pageContainer .navMenuContainer .navMenu .menuItem {
+        height: min-content;
+        width: 75vw;
+        margin: 20% auto; }
+        .pageContainer .navMenuContainer .navMenu .menuItem .itemText {
+          max-height: 10vh; }
+  .pageContainer .navMenuContainer.hiddenNav {
+    top: 0px;
+    right: -1000px; }
+  .pageContainer .navMenuContainer.activeNav {
+    top: 0px;
+    right: 0px; } }
+
+/* iPads (landscape) ----------- */
+/* iPads (portrait) ----------- */
+/* Desktops and laptops ----------- */
+/* Large screens ----------- */
+/* iPhone 5 (portrait &amp; landscape)----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .navbarContainer .navbarMenuBtnContainer {
+    margin-top: 5%;
+    margin-left: 80%; }
+  .navbarMenuContainer.active {
+    right: 0;
+    top: 15vh;
+    height: 85vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); }
+  .navbarMenuContainer.hidden {
+    right: -500px;
+    top: 15vh;
+    height: 85vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); }
+  .cardHeader {
+    margin-top: 5%;
+    max-height: 10vh; }
+    .cardHeader .cardHeaderText {
+      font-size: 1.3rem; }
+  .subtitleCard .subtitleText {
+    font-size: 0.9rem; }
+  .cardBody {
+    margin-top: 5%;
+    max-height: fit-content;
+    max-width: 85%; }
+    .cardBody .cardBodyText {
+      font-size: 1rem; }
+  .horizNavMenu {
+    flex-direction: column;
+    max-height: 70vh !important; }
+    .horizNavMenu .navMenuItemContainer {
+      margin-top: 10%; }
+  .preorderPage .cardHeader .cardHeaderText {
+    font-size: 1.4rem; }
+  .preorderPage .subtitleCard {
+    max-height: 20vh;
+    padding: 0 1%; }
+    .preorderPage .subtitleCard .subtitleText {
+      font-size: 0.9rem; }
+  .preorderPage .cardBody.flexRow {
+    max-height: 60vh;
+    flex-direction: column !important; }
+    .preorderPage .cardBody.flexRow .checkoutSectionContainer {
+      height: max-content; }
+      .preorderPage .cardBody.flexRow .checkoutSectionContainer .bookSideInfoContainer {
+        height: max-content; }
+        .preorderPage .cardBody.flexRow .checkoutSectionContainer .bookSideInfoContainer .bookSideInfoText {
+          font-size: 1rem; }
+        .preorderPage .cardBody.flexRow .checkoutSectionContainer .bookSideInfoContainer .buyNowBtn {
+          width: 50vw; }
+    .preorderPage .cardBody.flexRow .bookImageContainer {
+      width: auto;
+      height: 30vh;
+      margin: auto; }
+  .aboutPageContainer {
+    flex-direction: column !important;
+    overflow-y: auto;
+    max-height: 75vh;
+    padding-bottom: 2%; }
+    .aboutPageContainer .bookImageContainer {
+      max-height: fit-content;
+      margin: auto; }
+      .aboutPageContainer .bookImageContainer img {
+        width: auto;
+        max-height: 30vh; }
+    .aboutPageContainer .cardContentContainer {
+      flex-direction: column; }
+      .aboutPageContainer .cardContentContainer .emphasisText {
+        font-size: 1.7rem !important;
+        text-align: center; }
+  .modalCurtain {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.5s ease;
+    flex-direction: column; }
+    .modalCurtain .modalContainer {
+      flex-direction: column;
+      margin: auto;
+      max-width: 100vw;
+      min-height: 65vh; }
+      .modalCurtain .modalContainer div {
+        margin: auto;
+        min-width: 60%;
+        max-height: 5vh; }
+        .modalCurtain .modalContainer div input[type="email"] {
+          min-width: 75%;
+          font-family: "brandon-grotesque";
+          font-size: 1.2rem;
+          border: none;
+          background-color: #1c1926;
+          color: #e7d8c9; }
+        .modalCurtain .modalContainer div button {
+          font-family: "brandon-grotesque";
+          text-transform: uppercase;
+          font-weight: 700;
+          background-color: #efe5db;
+          border: none;
+          font-size: 1.2rem; }
+    .modalCurtain .modalCloseImgContainer {
+      max-height: 15vw; }
+      .modalCurtain .modalCloseImgContainer .modalCloseImg {
+        margin-left: auto;
+        margin-right: 5vw;
+        margin-top: 1%;
+        width: 5vw; }
+  .modalCurtain.active {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0; }
+  .modalCurtain.inactive {
+    position: absolute;
+    top: -100vh; } }
+
+/* Glaxay Fold (landscape)----------- */

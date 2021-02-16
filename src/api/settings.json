@@ -1,6 +1,6 @@
 {
 	"api": {
-		"dev": "http://localhost:8080/api",
-		"prod": "https://beingfoundbook.com/api"
+		"prod": "http://localhost:8080/api",
+		"dev": "https://beingfoundbook.com/api"
 	}
 }

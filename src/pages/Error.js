@@ -8,11 +8,12 @@ import backgroundImage from "../resources/images/Background_1.png";
 
 import { Redirect } from "react-router-dom";
 
-let style = {
+const style = {
 	backgroundImage: `URL(${backgroundImage})`,
 	backgroundRepeat: "no-repeat",
 	backgroundAttachment: "fixed",
 	backgroundPosition: "center",
+	backgroundSize: "cover",
 };
 
 export default class Success extends React.Component {
@@ -32,11 +33,10 @@ export default class Success extends React.Component {
 					<div className="pageBody">
 						<div className="card">
 							<div className="cardBody">
-
-                                <div className="cardBodyText emphasisText">
-                                    We are very sorry for the inconvienince please try again soon!
-                                </div>
-                            </div>
+								<div className="cardBodyText emphasisText">
+									We are very sorry for the inconvienince please try again soon!
+								</div>
+							</div>
 
 							<div className="cardAction">
 								<Link to="/" className="menuItem">

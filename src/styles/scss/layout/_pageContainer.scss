@@ -17,6 +17,7 @@
 	.navMenuContainer {
 		top: 50px;
 		height: 75vh;
+		z-index: 998;
 		position: fixed;
 		transition: 0.5s ease;
 		background-color: $darkPurple;

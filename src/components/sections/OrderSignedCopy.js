@@ -1,7 +1,11 @@
 import React from "react";
 import Axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
-
+import {
+	
+	Element,
+	
+} from "react-scroll";
 //import url
 import settings from "../../api/settings.json";
 
@@ -41,7 +45,7 @@ export default class OrderSignedCopy extends React.Component {
 
 	render = () => {
 		return (
-			<div id="ORDER" name="ORDER" className="page order">
+			<Element id="ORDER" name="ORDER" className="page order">
 				<div className="pageHeader">
 					<div className="titleHeader">
 						<div className="titleText">PURCHASE COPY</div>
@@ -82,7 +86,7 @@ export default class OrderSignedCopy extends React.Component {
 						</div>
 					</div>
 				</div>
-			</div>
+			</Element>
 		);
 	};
 }

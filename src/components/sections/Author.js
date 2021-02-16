@@ -13,7 +13,7 @@ import authorImage from "../../resources/images/authorImage.jpg";
 export default class OrderSignedCopy extends React.Component {
 	render = () => {
 		return (
-			<div id="AUTHOR" name="AUTHOR" className="page author">
+			<Element id="AUTHOR" name="AUTHOR" className="page author">
 				<div className="pageHeader">
 					<div className="titleHeader">
 						<div className="titleText">ABOUT THE AUTHOR</div>
@@ -47,7 +47,7 @@ export default class OrderSignedCopy extends React.Component {
 						</div>
 					</div>
 				</div>
-			</div>
+			</Element>
 		);
 	};
 }
